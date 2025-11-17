@@ -1,0 +1,12 @@
+17.11.25 :
+
+Forum rattaché à des séances de cinéma
+
+Appli de rencontre pour aller au cinéma
+
+Jeu de données : liste des cinémas sur Paris + liste de leurs programmes
+
+
+Mandats
+Eva : dm le mec de la bobine
+
