@@ -10,3 +10,4 @@ Jeu de données : liste des cinémas sur Paris + liste de leurs programmes
 Mandats
 Eva : dm le mec de la bobine
 Raphael, Béa, Joséphine: chercher bases de données utilisables
+Raphael, Béa: chercher appli de rencontre open source
