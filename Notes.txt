@@ -14,7 +14,6 @@ Raphael, Béa (✔️): chercher appli de rencontre open source
 
 7.12.25 :
 
-*Note de cadrage*
 La note de cadrage doit présenter en 4 diapos :
 
     le jeu de données choisi et l’objectif de réalisation (au moins votre objectif idéal !)
