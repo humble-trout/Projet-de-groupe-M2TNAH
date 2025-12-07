@@ -3,3 +3,5 @@ Programmes de cinéma sur Paris: https://www.offi.fr/cinema/programme.html
 
 https://github.com/etn406/api-allocine-helper
 https://developer.themoviedb.org/reference/intro/getting-started
+
+https://www.data.gouv.fr/datasets/programmation-des-cinemas-independants/
