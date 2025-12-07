@@ -21,6 +21,20 @@ La note de cadrage doit présenter en 4 diapos :
     l’équipe avec les rôles de chacun 
     les tâches, phases, jalons et livrables du projet (sous la forme d’une liste de tâches, d’un calendrier…)
 
+Contenu: 
+● Contexte et objectifs du projet : jeux de
+données choisis, enjeux, bénéfices
+● Hypothèses et contraintes du projet :
+ressources, délai, périmètre
+● Organisation du projet :
+    ○ présentation de l’équipe et de ses
+compétences, répartition des rôles,
+    ○ tâches, phases, jalons et livrables du projet
+(sous la forme d’une liste de tâches, d’un
+calendrier…)
+● Risques du projet et contre-mesures
+envisagées
+
 Plan B: site de rencontre avec données sur data.gouv
 
 Plan C: forum de discussion sur le cinéma (ou autre)
