@@ -11,3 +11,16 @@ Mandats
 Eva : dm le mec de la bobine
 Raphael, Béa (✔️), Joséphine: chercher bases de données utilisables
 Raphael, Béa (✔️): chercher appli de rencontre open source
+
+7.12.25 :
+
+*Note de cadrage*
+La note de cadrage doit présenter en 4 diapos :
+
+    le jeu de données choisi et l’objectif de réalisation (au moins votre objectif idéal !)
+    l’équipe avec les rôles de chacun 
+    les tâches, phases, jalons et livrables du projet (sous la forme d’une liste de tâches, d’un calendrier…)
+
+Béa: mail Margaux Faure pour scrape le site de l'officiel des spectacles
+Eva: contact anciens du M2
+Raph: QQOQCP pour la note de cadrage
