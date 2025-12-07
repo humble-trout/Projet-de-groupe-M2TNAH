@@ -27,6 +27,7 @@ Plan C: forum de discussion sur le cinéma (ou autre)
 
 Béa: mail Margaux Faure pour scrape le site de l'officiel des spectacles
 Eva: contact anciens du M2
-Raph: QQOQCP pour la note de cadrage
+Raph: QQOQCP pour la note de cadrage + structure et rédaction de la note de travail
 Joséphine: faire une liste des rôles (Eva veut bien le design d'appli)
 Béa: proposition de calendrier
+Eva: fait le Powerpoint
