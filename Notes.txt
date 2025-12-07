@@ -21,7 +21,7 @@ La note de cadrage doit présenter en 4 diapos :
     l’équipe avec les rôles de chacun 
     les tâches, phases, jalons et livrables du projet (sous la forme d’une liste de tâches, d’un calendrier…)
 
-Plan B: Données sur data.gouv
+Plan B: site de rencontre avec données sur data.gouv
 
 Plan C: forum de discussion sur le cinéma (ou autre)
 
