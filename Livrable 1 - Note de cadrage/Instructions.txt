@@ -1,0 +1,21 @@
+Date de rendu : 20/12/2023
+
+La note de cadrage doit présenter en 4 diapos :
+
+    le jeu de données choisi et l’objectif de réalisation (au moins votre objectif idéal !)
+    l’équipe avec les rôles de chacun 
+    les tâches, phases, jalons et livrables du projet (sous la forme d’une liste de tâches, d’un calendrier…)
+
+Réaliser en 4 diapos une note de cadrage présentant :
+● Contexte et objectifs du projet : jeux de
+données choisis, enjeux, bénéfices
+● Hypothèses et contraintes du projet :
+ressources, délai, périmètre
+● Organisation du projet :
+	○ présentation de l’équipe et de ses
+compétences, répartition des rôles,
+	○ tâches, phases, jalons et livrables du projet
+(sous la forme d’une liste de tâches, d’un
+calendrier…)
+● Risques du projet et contre-mesures
+envisagées

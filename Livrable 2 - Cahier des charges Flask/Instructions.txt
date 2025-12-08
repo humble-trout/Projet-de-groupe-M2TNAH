@@ -1,0 +1,25 @@
+À rendre : dimanche 11 janvier 2026, 23:59
+
+Le cahier des charges décrit l'application qui sera réalisée à l'étape suivante. Il sera remis en amont du point effectué avec chaque groupe, le 15 ou 22 janvier 2025.
+
+Le cahier des charges doit obligatoirement contenir les sections suivantes : - introduction : 
+
+    définit les objectifs de l’application
+    présentation des données et du modèle de données (MCD)
+    liste des fonctionnalités requises (produit minimum viable, MVP) et des fonctionnalités souhaitées (ajoutées s’il reste du temps)
+    description de l’interface utilisateur par le biais de maquettes fonctionnelles (qui montrent l’agencement des pages et des fonctions, mais n’ont pas besoin d’avoir un design finalisé)
+    reprendre les éléments de la fiche projet (liste de tâches, livrables, jalons) et préciser les dates
+    
+
+Le document décrit l’application qui sera réalisée à l’étape suivante.
+Le cahier des charges doit obligatoirement contenir les sections suivantes :
+- introduction : définit les objectifs de l’application
+- présentation des données et du modèle conceptuel de données de la base (MCD)
+- liste des fonctionnalités requises (produit minimum viable) et des fonctionnalités souhaitées
+(ajoutées s’il reste du temps) : prioriser en fonction d’un MVP (Minimum Viable Product)
+- description de l’interface utilisateur par le biais de maquettes fonctionnelles (qui montrent
+l’agencement des pages et des fonctions, mais n’ont pas besoin d’avoir un design finalisé)
+- reprendre les éléments de la fiche projet (liste de tâches, livrables, jalons) et préciser les
+dates
+
+Un exemple de cahier des charges est disponible ci-dessous

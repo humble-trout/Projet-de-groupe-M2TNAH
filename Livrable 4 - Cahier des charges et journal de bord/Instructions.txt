@@ -1,0 +1,27 @@
+ À rendre : lundi 23 février 2026, 23:59
+
+Déposez ici :
+
+- le lien vers les datavisualisations dans Tableau
+
+- les jeux de données utilisés pour les générer
+
+- le journal de bord du traitement de données, contenant l'analyse des datavisualisations
+
+Se compose de 2 éléments :
+1. Plusieurs datavisualisations (au moins 3) réalisées avec Tableau, en extrayant les données
+de la base de données.
+	a. fournir les jeux de données ou les requêtes utilisées pour générer les dataviz
+	b. lien vers les dataviz dynamiques dans Tableau en ligne
+	c. + des copies d’écran significatives dans le journal de bord
+2. Un journal de bord :
+	a. décrivant les jeux de données choisis et l’objectif du traitement (justifiez vos choix !)
+	b. décrivant et expliquant les traitements réalisés (inclure les requêtes SPARQL et SQL)
+		i. présenter la chaîne de traitement sous la forme d’un diagramme de processus
+	c. Analyse des dataviz : veiller à répondre aux questions suivantes :
+		i. Quelle est la valeur ajoutée des datavisualisations pour comprendre les
+données présentées ?
+		ii. Qu’apprend-on en les regardant ?
+		iii. Quels sont les biais ?
+	d. retour d’expérience et analyse critique sur le traitement de la donnée : évoquer ce qui n’a pas fonctionné, les choix écartés en cours de route, les enseignements qui en ont
+été tirés.

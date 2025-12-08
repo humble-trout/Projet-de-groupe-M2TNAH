@@ -1,0 +1,21 @@
+ À rendre : dimanche 8 février 2026, 23:59
+
+Déposez ici :
+
+    le modèle logique de données (MCD) de la base
+
+    l’accès à la base de données elle-même
+
+    les jeux de données chargés, nettoyés et enrichis
+
+
+La base doit être constituée à partir de plusieurs jeux de données dont au moins un
+issu de Wikidata. Les données seront croisées, nettoyées et enrichies dans la base.
+Des scripts Python seront fournis pour vous aider à extraire les données et les charger
+dans la base.
+La base sera réalisée progressivement à travers des exercices donnés par Lauryne
+Lemosquet dans le cours « Traitement de données ».
+Le livrable comprend :
+1. le modèle logique de données (MCD) de la base
+2. l’accès à la base de données elle-même
+3. les jeux de données chargés, nettoyés et enrichis

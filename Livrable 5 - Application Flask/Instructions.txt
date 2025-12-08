@@ -1,0 +1,30 @@
+À rendre : mardi 31 mars 2026, 22:59
+
+Réalisation d'une application web (front-office et back-office) exploitant des données.
+
+L’application doit présenter les éléments suivants : 
+
+    Création du front-office avec des templates Flask (utiliser au moins une extension non vue en cours) et un design simple
+    Utilisation d'un ORM pour
+        gérer les utilisateurs et leurs connexions
+        écriture, lecture et modification de données dans une base SQL simple 
+    Exploiter la base de données SQLite sortie du devoir de l’UE3 (traitement de la donnée) et potentiellement utiliser d’autres sources de données externes via des API
+
+Le rendu se fait sous la forme d’un dépôt Github public respectant des règles de documentation et bonnes pratiques de développement :
+
+    présence d’un fichier README.md 
+    respect des bonnes pratiques vues en cours
+     fourniture du modèle de données et des instructions pour l’installation de la base
+
+Le détail du barème est disponible dans la Description générale de l'évaluation de groupe des UE3-4-5.
+
+Objectif : réalisation d’une application web (front-office +
+back-office) exploitant des données.
+
+Le rendu se fait sous la forme d’un dépôt Github public
+respectant des règles de documentation et bonnes pratiques de
+développement :
+- présence d’un fichier README.md
+- respect des bonnes pratiques vues en cours
+- fourniture du modèle de données et des instructions pour
+l’installation de la base
