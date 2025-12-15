@@ -47,5 +47,6 @@ Eva: fait le Powerpoint
 
 
 [ idee ] data viz : genre des films vu / add fav
-    carte des ciné / séance par zone ou par film ? 
+    carte des ciné / séance par zone ou par film ?
+si on a, graph de la fréquentation des salles ? ou de la popularité des films 
     
