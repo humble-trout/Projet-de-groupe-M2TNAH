@@ -1,0 +1,6 @@
+20/12/2025: Rendu de la note de cadrage
+11/01/2026: Rendu du cahier des charges
+08/02/2026: Rendu du traitement de données
+23/02/2026: Rendu du cahier des charges
+23/02/2026: Rendu du journal de bord
+31/03/2026: Rendu de l'application Flask
