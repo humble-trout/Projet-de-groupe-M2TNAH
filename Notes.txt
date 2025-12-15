@@ -44,3 +44,8 @@ Raph: QQOQCP pour la note de cadrage + structure et rédaction de la note de tra
 Joséphine: faire une liste des rôles (Eva veut bien le design d'appli)
 Béa: proposition de calendrier
 Eva: fait le Powerpoint
+
+
+[ idee ] data viz : genre des films vu / add fav
+    carte des ciné / séance par zone ou par film ? 
+    
