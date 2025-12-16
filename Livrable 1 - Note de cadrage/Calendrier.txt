@@ -1,6 +1,38 @@
+*Phase 1*
+10/11/25-20/12/25:
+- Choix du jeu de données
+- Validation du jeu de données
+- Définition des objectifs du projet
+- Création d'un dépôt GitHub
+- Création d'un calendrier
+- Attribution des rôles dans l'équipe
+- Rédaction de la note de cadrage
+
 20/12/2025: Rendu de la note de cadrage
+
+*Phase 2*
+20/12/25-05/12/25:
+- Rédaction du cahier des charges
+- Début de la rédaction du journal de bord
+- Petit travail de datavisualisation
+- Choix des outils de traitement des données
+
 11/01/2026: Rendu du cahier des charges
+
+*Phase 3*
+- Nettoyage et enrichissement de la base de données
+- Création de datavisualisations
+- Mise en forme du journal de bord
+- Structuration des données
+
 08/02/2026: Rendu du traitement de données
-23/02/2026: Rendu du cahier des charges
+23/02/2026: Rendu des datavisualisations
 23/02/2026: Rendu du journal de bord
+
+*Phase 4*
+- Construction de l'application Flask
+- Tests de l'application (?)
+
 31/03/2026: Rendu de l'application Flask
+
+SUGGESTION: ajouter des dates de réunions? Une ou deux par phase
