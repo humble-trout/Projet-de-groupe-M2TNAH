@@ -5,6 +5,9 @@ titre, noms, etc…
 Jeu de données principal : https://www.data.gouv.fr/datasets/programmation-des-cinemas-independants/ 
 
 Croisé avec : 
+- Fréquentation des salles de cinéma 
+- Données extraites de l'API de l'OMDb 
+- Données disponibles sur wikidata (informations sur les films)
 
 2) OBJECTIF DU PROJET : 
 
@@ -31,13 +34,13 @@ Créer une application de type "rencontre" centrée sur les pratiques cinématog
 L'équipe est composée de quatre étudiants du master "Technologies numériques appliquées à l'Histoire" de l'École nationale des chartes. Même si ses membres sont polyvalents, le travail est divisé en différents pôles, pour lesquels chaque membre a un rôle de référent : 
 
 Joséphine Maire : Responsable organisation / responsable modélisation 
-Missions : Répartition des rôles 
+Autres missions : Répartition des rôles 
 Raphaël Hache : Responsable technique / responsable back 
-Missions : Structure et rédaction de la note de cadrage
+Autres missions : Structure et rédaction de la note de cadrage
 Éva Rivière : Responsable design / responsable front 
-Missions : Mise en page de la note de cadrage
+Autres missions : Mise en page de la note de cadrage
 Béatrice Pascale : Responsable documentation / responsable donnée   
-Missions : Calendrier, contacts avec les professeurs
+Autres missions : Calendrier, contacts avec les professeurs
 
 
 
