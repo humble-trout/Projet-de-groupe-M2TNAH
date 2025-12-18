@@ -2,6 +2,10 @@
 
 titre, noms, etc… 
 
+Jeu de données principal : https://www.data.gouv.fr/datasets/programmation-des-cinemas-independants/ 
+
+
+
 2) OBJECTIF DU PROJET : 
 
 => Contexte et objectifs du projet :  
@@ -15,7 +19,7 @@ Créer une application de type "rencontre" centrée sur les pratiques cinématog
 
 - Carte des cinémas indépendants : Permet de trouver sa séance en fonction de l'emplacement du cinéma. 
 
-Spotify Wrapped : Compte rendu personnalisé, par utilisateur, de la fréquentation des cinémas indépendants. 
+- Spotify Wrapped : Compte rendu personnalisé, par utilisateur, de la fréquentation des cinémas indépendants. 
 
 
 => Contraintes : 
