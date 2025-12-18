@@ -6,7 +6,7 @@ Jeu de données principal : https://www.data.gouv.fr/datasets/programmation-des-
 
 Croisé avec : 
 - Fréquentation des salles de cinéma 
-- Données extraites de l'API de l'OMDb 
+- Données extraites de l'API de l'OMDb : https://github.com/etn406/api-allocine-helper
 - Données disponibles sur wikidata (informations sur les films)
 
 2) OBJECTIF DU PROJET : 
