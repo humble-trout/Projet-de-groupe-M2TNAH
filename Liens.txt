@@ -4,4 +4,20 @@ Programmes de cinéma sur Paris: https://www.offi.fr/cinema/programme.html
 https://github.com/etn406/api-allocine-helper
 https://developer.themoviedb.org/reference/intro/getting-started
 
+
+
+programmation :
 https://www.data.gouv.fr/datasets/programmation-des-cinemas-independants/
+
+localisation : 
+https://www.cnc.fr/cinema/etudes-et-rapports/statistiques/geolocalisation-des-cinemas-actifs-en-france
+https://data.culture.gouv.fr/explore/dataset/etablissements-cinematographiques/api/
+https://www.data.gouv.fr/datasets/etablissements-cinematographiques?resource_id=75ed4730-9ab3-4498-b16b-856db838c17b
+
+fréquentation :
+https://www.cnc.fr/cinema/etudes-et-rapports/statistiques/geographie-du-cinema-departements
+
+info comp film :
+https://www.omdbapi.com/
+https://www.wikidata.org/wiki/Q477809
+https://www.wikidata.org/wiki/Q37312 !!!
