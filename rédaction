@@ -2,25 +2,24 @@
 
 titre, noms, etc… 
 
-
-
 2) OBJECTIF DU PROJET : 
 
-=> Contexte et objectifs du projet : main 
+=> Contexte et objectifs du projet :  
 
 Créer une application de type "rencontre" centrée sur les pratiques cinématographiques.
 
-Fonctionnalités : 
-=> But principal : Se connecter et "matcher" avec d'autres utilisateurs s'ils prévoient d'assister à une même séance de cinéma. 
-=> Créer un profil fondé sur les films favoris des utilisateurs 
-=> Construire un calendrier personnalisé composé des séances auxquelles les utilisateurs souhaitent assister
+- Fonctionnalités : 
+  => But principal : Se connecter et "matcher" avec d'autres utilisateurs s'ils prévoient d'assister à une même séance de cinéma. 
+  => Créer un profil fondé sur les films favoris des utilisateurs 
+  => Construire un calendrier personnalisé composé des séances auxquelles les utilisateurs souhaitent assister
 
-Carte des cinémas indépendants : Permet de trouver sa séance en fonction de l'emplacement du cinéma. 
+- Carte des cinémas indépendants : Permet de trouver sa séance en fonction de l'emplacement du cinéma. 
 
 Spotify Wrapped : Compte rendu personnalisé, par utilisateur, de la fréquentation des cinémas indépendants. 
 
 
 => Contraintes : 
+
 
 3) ÉQUIPE : 
 
@@ -30,7 +29,7 @@ L'équipe est composée de quatre étudiants du master "Technologies numériques
 Joséphine Maire : Responsable organisation / responsable modélisation 
 Raphaël Hache : Responsable technique / responsable back 
 Éva Rivière : Responsable design / responsable front 
-Béatrice Pascale : Responsable documentation / responsable donnée 
+Béatrice Pascale : Responsable documentation / responsable donnée   
 
 
 4) CALENDRIER : 
