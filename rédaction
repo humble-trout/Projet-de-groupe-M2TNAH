@@ -34,14 +34,51 @@ Créer une application de type "rencontre" centrée sur les pratiques cinématog
 L'équipe est composée de quatre étudiants du master "Technologies numériques appliquées à l'Histoire" de l'École nationale des chartes. Même si ses membres sont polyvalents, le travail est divisé en différents pôles, pour lesquels chaque membre a un rôle de référent : 
 
 Joséphine Maire : Responsable organisation / responsable modélisation 
-Autres missions : Répartition des rôles 
 Raphaël Hache : Responsable technique / responsable back 
-Autres missions : Structure et rédaction de la note de cadrage
 Éva Rivière : Responsable design / responsable front 
-Autres missions : Mise en page de la note de cadrage
 Béatrice Pascale : Responsable documentation / responsable donnée   
-Autres missions : Calendrier, contacts avec les professeurs
+
 
 
 
 4) CALENDRIER : 
+
+*Phase 1*
+10/11/25-20/12/25 : 
+- Validation du jeu de données (Béatrice Pascale, Eva Rivière) 
+- Définition des objectifs du projet 
+- Création d'un dépôt GitHub (Béatrice Pascale) 
+- Création d'un calendrier (Béatrice Pascale) 
+- Attribution des rôles dans l'équipe (Joséphine Maire)
+- Rédaction de la note de cadrage (Raphaël Hache)
+
+20/12/2025: Rendu de la note de cadrage
+
+*Phase 2*
+20/12/25-05/06/26:
+- 28/12/2025 : Réunion 
+- Rédaction du cahier des charges
+- Début de la rédaction du journal de bord
+- Petit travail de datavisualisation
+- Choix des outils de traitement des données
+
+11/01/26: Rendu du cahier des charges
+
+*Phase 3*
+- 18/01/26: Réunion 
+- Nettoyage et enrichissement de la base de données
+- Création de datavisualisations
+- Mise en forme du journal de bord
+- Structuration des données
+
+08/02/2026: Rendu du traitement de données
+23/02/2026: Rendu des datavisualisations
+23/02/2026: Rendu du journal de bord
+
+*Phase 4*
+- 01/03/26 : Réunion 
+- Construction de l'application Flask
+- Tests de l'application (?)
+
+31/03/26: Rendu de l'application Flask 
+
