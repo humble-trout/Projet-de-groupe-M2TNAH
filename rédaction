@@ -99,3 +99,9 @@ Béatrice Pascale : Responsable documentation / responsable donnée
 
 31/03/26: Rendu de l'application Flask 
 
+5) Hypothèses et contraintes
+- Contrainte: difficile de trouver des bdd avec la liste des cinés indépendants, potentiellement il faudra la construire nous-même
+
+6) Risques et contre-mesures
+- Risque: projet ambitieux, il faudra définir à quel point on veut imiter une application de rencontre "classique" (par exemple, est-ce qu'on inclut une fonction de chat entre personnes matchées) pour voir si on aura le temps de tout coder et de tout rendre personnel
+- Contre-mesure: définir les limites de l'appli pendant le mois de janvier
