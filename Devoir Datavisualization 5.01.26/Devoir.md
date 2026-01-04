@@ -27,9 +27,9 @@ https://crfj.hypotheses.org/370
 
 - Répondre à la question : en quoi cette forme "fait parler" les données dans cet exemple ? (question écrite dans le diapo)  
 Dans notre exemple de recherche historiques sur le thème des croisades (histoire médiévale), l'utilisation du nuage de mots pour représenter les données récoltées dans les sources s'avère très pertinent pour plusieurs raisons.  
-En effet, le nuage de mots permet une lecture synthétique d'une source (de type chronique médiévale):
--il permet d'en identifier les thèmes majeurs, en mettant en valeur ce qui est important dans le texte sans devoir en faire une lecture complète.
--il détecte dans les même temps les spécificités de chaque texte et notamment leur différence de point de vue : exemple 2 sources similaires dont l'une  un point de vue religieux et l'autre politique, la taille des mots du nuage indiquera les différents points de vue.
+En effet, le nuage de mots permet une lecture synthétique d'une source (de type chronique médiévale):  
+-il permet d'en identifier les thèmes majeurs, en mettant en valeur ce qui est important dans le texte sans devoir en faire une lecture complète.  
+-il détecte dans les même temps les spécificités de chaque texte et notamment leur différence de point de vue : exemple 2 sources similaires dont l'une  un point de vue religieux et l'autre politique, la taille des mots du nuage indiquera les différents points de vue.  
 -enfin il permet un accès simple et intuitif grâce au visuel = permet une interprétation rapide en rendant les données des sources accessibles et donc plus pédagogiques.
 
 En définitive ce type de datavisualisation correspond tout à fait à notre exemple brassant des sources nombreuses et homogènes, permettant d'en faire une lecture synthétique, intuitive, mettant en lumière les thèmes majeurs des sources tout en soulignant leurs spécificités. 
