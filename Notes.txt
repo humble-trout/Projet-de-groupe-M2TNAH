@@ -50,3 +50,10 @@ Eva: fait le Powerpoint
     carte des ciné / séance par zone ou par film ?
 si on a, graph de la fréquentation des salles ? ou de la popularité des films 
     
+7.01.26
+
+- introduction : définit les objectifs de l’application -> Joséphine
+- présentation des données et du modèle conceptuel de données de la base (MCD) -> Raph 
+- liste des fonctionnalités requises (produit minimum viable) et des fonctionnalités souhaitées (ajoutées s’il reste du temps) : prioriser en fonction d’un MVP (Minimum Viable Product) -> Eva
+- description de l’interface utilisateur par le biais de maquettes fonctionnelles (qui montrent l’agencement des pages et des fonctions, mais n’ont pas besoin d’avoir un design finalisé) -> A faire en dernier
+- reprendre les éléments de la fiche projet (liste de tâches, livrables, jalons) et préciser les dates -> Béa
