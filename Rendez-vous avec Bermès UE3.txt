@@ -1,0 +1,7 @@
+Ces ateliers durent 30 à 45 mn. Je me chargerai de vous communiquer des dates parmi lesquelles choisir et de mettre en place un lien Teams. Il vous revient, dans une logique de gestion de projet, d'animer la réunion, à savoir : 
+
+- envoyer avant la réunion un projet d'ordre du jour,
+- préparer une courte présentation de votre projet, de vos jeux de données, et du travail en cours sur le traitement de données et les jointures envisagés
+- que vos questions éventuelles (à mettre dans l'ordre du jour),
+- animer la réunion elle-même (confiez cette tâche à l'un d'entre vous) : accueillir les participants, donner la parole aux uns et aux autres, s'assurer que l'ordre du jour est traité, tenir le temps, conclure la réunion,
+- envoyer un court compte-rendu par mail aux participants, après la réunion.
