@@ -1,4 +1,5 @@
 Appli de rencontre open source et en Python: https://github.com/duolicious
+Appli de rencontre codée en Flask: https://github.com/Shakti077/DatingApp
 Programmes de cinéma sur Paris: https://www.offi.fr/cinema/programme.html
 
 https://github.com/etn406/api-allocine-helper
