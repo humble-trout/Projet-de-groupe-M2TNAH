@@ -57,3 +57,46 @@ si on a, graph de la fréquentation des salles ? ou de la popularité des films
 - liste des fonctionnalités requises (produit minimum viable) et des fonctionnalités souhaitées (ajoutées s’il reste du temps) : prioriser en fonction d’un MVP (Minimum Viable Product) -> Eva (✔️)
 - description de l’interface utilisateur par le biais de maquettes fonctionnelles (qui montrent l’agencement des pages et des fonctions, mais n’ont pas besoin d’avoir un design finalisé) -> A faire en dernier
 - reprendre les éléments de la fiche projet (liste de tâches, livrables, jalons) et préciser les dates -> Béa (✔️)
+
+
+NOTES - ENTRETIEN M.Challon (14/01) : 
+
+La position de l'utilisateur est pas ds le modèle (il faut stocker une position dans la table "utilisateur'). 
+Pas de géolocalisation, ce qui rend compliqué le projet d'appli de rencontrer 
+Fonctionnalités : 
+NON pour changement de mdp, juste gestion de compte normale (perte de tps)
+Recherche plein txt : OUI 
+Carte : OUI (il faudra des filtres, il faut pas que la carte soit statique, il faut pv filtrer : sur la recherche de films) => formulaire
+Match : OUI 
+Calendrier perso : OUI 
+Ne pas faire les habitudes ciné et les trucs de fréquentation 
+Fonctionnalités imaginables : 
+algorithme : NON 
+messagerie instantanée : NON
+Visionnage du profil : indispensable 
+Synchro du calendrier : OUI 
+Filtres avancés : OUI 
+Export : NON (perte de tps) 
+Notif dans l'appli (Ex : vous avec X match en attente, …)
+
+Si on trouve des packages pour faire des choses difficiles (Ex:Push), le dire à Challon. 
+
+Mais pas pour la messagerie par exple, pcque ça demande bcp d'intégration dans le code 
+
+Si on utilise SQLAlchemy, aucun risque de supprimer les données. 
+MAIS risque qd on écrit des requêtes SQL à la main de suppr ttes les données => NE PAS LE FAIRE !! 
+=> Parce que notre cas, tout est faisable en SQLAlchemy 
+
+Ne pas aller dans le code tête baissée. Scinder le code par étapes : 
+Ex : 1 semaine = 1 fonctionnalité 
+
+réfléchir en amont à la logique et à l'ordre de dvpt, et tt ira bien. 
+
+Si on a des blocages en mars qd on dvlppe, on peut lui dire, et on le voit à distance. 
+Il ne faut pas empiler les pb. 
+
+Remettre à plat ttes les fonctionnalités, et tenter de refaire un planning + précis sur la partie Flask.
+
+Répartir précisément en jour et en semaines, et ne pas passer à la fonctionnalité suivante tant que la précédente ne marche pas. 
+
+
