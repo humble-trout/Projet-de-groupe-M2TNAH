@@ -18,9 +18,12 @@ Genres : (AllMovie genre ID) :
 
 Base de données avec des infos liées à des films, des séries TV et des jeux vidéos. 
 
-IMDb ID
-IMDb keyword
-IMDb interest ID
+Impossible d'accéder à certaines données sur le site IMDb (CF "Interwiki prefix at Wikimedia")
+
+Prorpiétés Wikidata : 
+- IMDb ID : 
+- IMDb keyword : recherche par mots-clés ?? Pas compris 
+- IMDb interest ID : identifiants pour les sous-genres de films
 
  DOUTES : 
 - Je pense avoir mal compris comment exploiter les données wikidata (comment les insérer dans la BDD, quelles données utiliser précisément...) 
