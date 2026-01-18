@@ -11,3 +11,7 @@ linechart de la fréquentation sur 21,22,23,24
 a partir des données CNC et culture gouv + wififilm :
 stacked bar chart comparant la répartition des genres pour les salles labellisées "Art et Essai" (type d'AE ?) versus les salles "Classiques"
 et les films etrangé
+
+-quantité de films historiques dans les cinémas indépendants
+-qauntité de film du répertoire dans les cinémas indépendants 
+
