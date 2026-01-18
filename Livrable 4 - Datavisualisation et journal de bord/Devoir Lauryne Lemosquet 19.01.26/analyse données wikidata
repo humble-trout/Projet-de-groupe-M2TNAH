@@ -1,0 +1,23 @@
+ANALYSE GÉNÉRALE : 
+les données sur wikidata sont nombreuses, exhaustives et complètes (et renvoient vers bcp d'autres jeux de données si besoin). Je ne vois pas ce qu'on pourrait rajouter. 
+
+À utiliser pour enrichir la BDD avec des infos supplémentaires sur des films. 
+
+1er jeu : Wikidata AllMovie (Q477809) : 
+
+Base de données avec infos sur des vedettes de cinéma, films et émissions de TV. Identifiants externes (= qui renvoient vers un autre site) pour des titres, personnes et genres dont les ID renvoient vers la page correspondante sur allmovie.com. 
+
+Titres (AllMovie title ID) : 
+=> rapide résumé des films issu de Wikipédia, avis des spectateurs, distribution, streams et films similaires (+ appartenance à un genre et un sous-genre, date, durée, pays, note)
+Personnes (AllMovie person ID) : 
+=>Données pas forcément utiles (bio de la personne et filmographie)
+Genres : (AllMovie genre ID) : 
+=> Films rangés dans des genres et sous-genres identifiés avec un ID dispo sur wikidata. 
+
+2e jeu : Wikidata IMDb (Q37312) 
+
+IMDb ID
+IMDb keyword
+IMDb interest ID
+
+C'EST PAS FINI !! Je finis en fin d'aprem :) 
