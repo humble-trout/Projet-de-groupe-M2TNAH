@@ -1,0 +1,13 @@
+Analyse:
+Jeu de données complet et exhaustif, je ne vois rien qui pourrait être rajouté (même si les données de certaines colonnes pourraient être réparties sur deux colonnes pour plus de clarté). Mes modifications visent à rendre les données plus facilement utilisables en SQL plutôt qu’à modifier leur contenu.
+
+
+Modifications:
+- tranformer le type de données en “BOOL” alors qu’elles sont maintenant “VARCHAR”, après avoir simplifié les données pour qu’il n’y ait que deux options (détail pas nécessaire, ou alors à répartir sur une autre colonne pour les cas où la valeur serait OUI): catégorie arts et essai
+- tranformer le type de données en “BOOL” alors qu’elles sont maintenant “VARCHAR”: genre, multiplexe
+- tranformer le type de données en “NUM” alors qu’elles sont maintenant “VARCHAR”: évolution entrées, PdM en entrées des films français, PdM en entrées des films américains, PdM en entrées des films européens, PdM en entrées des films Art et Essai, latitude, longitude, geolocalisation
+- tranformer le type de données en “INT” alors qu’elles sont maintenant “VARCHAR”: code INSEE, DEP, N°UU
+- tranformer le type de données en “INT” alors qu’elles sont maintenant NUM: population de la commune, population unité urbaine, écrans, fauteuils, semaines d'activité, séances, entrées 2022, entrées 2021, nombre de films programmés, nombre de films inédits, nombre de films en semaine 1, films Art et Essai
+- Expliciter ce que veut dire PdM 
+- changer les noms des cinémas et des régions (en majuscule à l’origine et sans accents) vers du majuscule au début + minuscules et rétablir les accents
+- ajouter des clés primaires qui permettent de lier ces données au reste (une par cinéma, peut-être une par programmateur?)
