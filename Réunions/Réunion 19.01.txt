@@ -1,0 +1,5 @@
+ODJ:
+- Problèmes pendant la rédaction du cahier des charges
+- Répartition inégale du travail
+- Calendrier des prochaines réunions
+- Livrable dataviz (voir les idées proposées, répartir les tâches)
