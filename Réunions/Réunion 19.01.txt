@@ -2,4 +2,5 @@ ODJ:
 - Problèmes pendant la rédaction du cahier des charges
 - Répartition inégale du travail
 - Calendrier des prochaines réunions
+- Note de cadrage 2.0
 - Livrable dataviz (voir les idées proposées, répartir les tâches)
