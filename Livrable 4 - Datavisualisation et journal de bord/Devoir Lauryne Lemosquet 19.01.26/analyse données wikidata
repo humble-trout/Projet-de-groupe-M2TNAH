@@ -28,3 +28,5 @@ Prorpiétés Wikidata :
  DOUTES : 
 - Je pense avoir mal compris comment exploiter les données wikidata (comment les insérer dans la BDD, quelles données utiliser précisément...) 
 
+MODIFICATIONS : 
+- mettre les dates dans un format "date" et pas en VARCHAR (conseil dit en cours)
