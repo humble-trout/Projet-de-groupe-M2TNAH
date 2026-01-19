@@ -1,8 +1,8 @@
 - Quantité de films étrangers proposés dans les cinémas indépendants parisiens vs dans les cinémas de province (croiser géographie-du-cinéma-départements,
-établissement-cinématographiques et programmation-cinémas) / En croisant les mêmes données : différences d'accès à la VO ou à la VF en fonction du département 
+établissement-cinématographiques et programmation-cinémas) / En croisant les mêmes données : différences d'accès à la VO ou à la VF en fonction du département -> diagramme en barres
 - Quantité de cinémas présents dans des zones avec une forte concentration de bénéficiaires du RSA, possible de séparer les types de RSA 
 (croiser géographie-du-cinéma-départements, Données-cartographie-2024, établissement-cinématographiques avec https://www.data.gouv.fr/datasets/rsa-repartition-des-allocataires-selon-le-type-de-rsa-communal/community-resources) 
-++ comparé les cinéma (nb salle ecran frequentation) !!
+++ comparé les cinéma (nb salle ecran frequentation) !! -> diagramme en nuage de points
 
 
 en partant des salles indé + dataset cnc :
