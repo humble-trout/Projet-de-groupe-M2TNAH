@@ -5,6 +5,9 @@ Programmes de cinéma sur Paris: https://www.offi.fr/cinema/programme.html
 https://github.com/etn406/api-allocine-helper
 https://developer.themoviedb.org/reference/intro/getting-started
 
+https://www.reddit.com/r/learnpython/comments/1fytqd6/developing_a_calendar_app_with_flask_what_steps/
+https://youtu.be/3MVtsgHkztk
+
 
 
 programmation :
