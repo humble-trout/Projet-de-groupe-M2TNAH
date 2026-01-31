@@ -25,8 +25,20 @@ Prorpiétés Wikidata :
 - IMDb keyword : recherche par mots-clés ?? Pas compris 
 - IMDb interest ID : identifiants pour les sous-genres de films
 
+
  DOUTES : 
 - Je pense avoir mal compris comment exploiter les données wikidata (comment les insérer dans la BDD, quelles données utiliser précisément...) 
 
 MODIFICATIONS : 
 - mettre les dates dans un format "date" et pas en VARCHAR (conseil dit en cours)
+
+
+REQUÊTE WIKIDATA FONCTIONNELLE : (permet d'avoir un csv avec des infos sur plein de films) 
+
+SELECT DISTINCT ?film ?filmLabel ?realisateur ?realisateurLabel ?date ?pays ?paysLabel WHERE {
+  ?film wdt:P1562 ?titre.
+  OPTIONAL {?film wdt:P57 ?realisateur.}
+  OPTIONAL {?film wdt:P577 ?date.}
+  OPTIONAL {?film wdt:P495 ?pays.}
+  SERVICE wikibase:label { bd:serviceParam wikibase:language "en". }
+}
