@@ -100,3 +100,31 @@ Remettre à plat ttes les fonctionnalités, et tenter de refaire un planning + p
 Répartir précisément en jour et en semaines, et ne pas passer à la fonctionnalité suivante tant que la précédente ne marche pas. 
 
 
+
+CR réu groupe 31/01 : 
+
+
+Médiation : Raphaël 
+
+Pq ils envoient un lien Teams alors qu'on est tous en cours ? C'est en visio ou pas ? 
+
+Préparer des questions !! 
+
+Il faut qu'on prenne tous des notes pour faire le CR ensuite 
+
+Pour préparer la réu : 
+
+Faire un ODJ 
+
+Faire un powerpoint ? reprendre le powerpoint de la note de cadrage. Reprendre la même DA et simplifier un peu le truc 
+
+Préparer chacun ce qu'on doit dire 
+
+Pour la présentation du travail : peut-être suivre ce qui est écrit par Bermès dans le mail : 
+
+1. Votre projet (Eva ou Raphaël, en fonction du choix d'Eva)
+2. Vos jeux de données (Joséphine) 
+3. Travail en cours sur le traitement de données et jointures envisagées (Béatrice et Eva ou Raphaël) 
+
+
+
