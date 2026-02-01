@@ -22,16 +22,15 @@ Nous utiliserons aussi des jeux de données complémentaires.
 2 du CNC : 
 -geographie_du_cinema_departement qui présente la cartographie des cinémas par département écrans et établissements, densité du parc, entrées du parc, indice de fréquentation. 
 -donnees_cartographiques qui géolocalise les cinémas actifs en 2024. 
-(Ces deux jeux de données ont été actualisés en 2025.)
+(Ces deux jeux de données ont été actualisés en 2025)
 
 2 provenant de Wikidata:
 -AllMovie (Q477809):Base de données contenant des informations sur des vedettes de cinémas, des films et des émissions de télévision.
 -IMDb (Q37312) : Base de données contenant des informations sur des films, émissions de télévision et jeux vidéos.
-Nous utiliserons aussi un jeu de données data.culture.gouv : etablissements_cinematigraphiques qui liste et localise les établissements cinématographiques en 2022. 
+Nous utiliserons aussi un jeu de données data.culture.gouv : etablissements_cinematographiques qui liste et localise les établissements cinématographiques en 2022. 
 
 Nous utiliserons le jeu de données de l'OMDb API, The Open Movie Database pour faire des requêtes pour obtenir des informations sur les films. 
-Nous aurons également recours à un jeu de données sur le RSA pour les besoins de la datavisualisation. 
-
+Nous aurons également recours à un jeu de données sur le RSA pour les besoins de la datavisualisation : nous voulons pouvoir présenter la quantité de cinémas présents dans des zones avec une forte concentration de bénéficiaires du RSA, (croiser géographie-du-cinéma-départements, Données-cartographie-2024, établissement-cinématographiques avec https://www.data.gouv.fr/datasets/rsa-repartition-des-allocataires-selon-le-type-de-rsa-communal.
 Nos jeux de données, s'appuient sur des données riches, complémentaires et à jour, qui nous permettrons d'analyser la programmation cinématographique indépendante, en tenant en compte du contexte géographique et cinématographique. 
 Maintenant que nous vous avons présenté nos données, je laisse à mes camarades la tache de vous exposer le travail que nous réaliserons sur ces données. 
 
