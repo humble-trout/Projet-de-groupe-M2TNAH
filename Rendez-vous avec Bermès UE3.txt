@@ -13,13 +13,27 @@ Présentation rapide et collective du projet, divisé en plusieurs parties :
 
 => Présentation générale du projet
 
+
 => Jeux de données
+
 Pour ce projet, nous allons utiliser un jeu de données principal : programmation_cinema, provenant de data.gouv, il présente la programmation d'une centaine de cinémas indépendants en France. 
-Nous utiliserons aussi deux jeux de données du CNC : 
+
+Nous utiliserons aussi des jeux de données complémentaires.
+2 du CNC : 
 -geographie_du_cinema_departement qui présente la cartographie des cinémas par département écrans et établissements, densité du parc, entrées du parc, indice de fréquentation. 
 -donnees_cartographiques qui géolocalise les cinémas actifs en 2024. 
 (Ces deux jeux de données ont été actualisés en 2025.)
-Nous aurons également recours à 
+
+2 provenant de Wikidata:
+-AllMovie (Q477809):Base de données contenant des informations sur des vedettes de cinémas, des films et des émissions de télévision.
+-IMDb (Q37312) : Base de données contenant des informations sur des films, émissions de télévision et jeux vidéos.
+Nous utiliserons aussi un jeu de données data.culture.gouv : etablissements_cinematigraphiques qui liste et localise les établissements cinématographiques en 2022. 
+
+Nous utiliserons le jeu de données de l'OMDb API, The Open Movie Database pour faire des requêtes pour obtenir des informations sur les films. 
+Nous aurons également recours à un jeu de données sur le RSA pour les besoins de la datavisualisation. 
+
+Nos jeux de données, s'appuient sur des données riches, complémentaires et à jour, qui nous permettrons d'analyser la programmation cinématographique indépendante, en tenant en compte du contexte géographique et cinématographique. 
+Maintenant que nous vous avons présenté nos données, je laisse à mes camarades la tache de vous exposer le travail que nous réaliserons sur ces données. 
 
 
 => Travail en cours sur le traitement de la donnée et jointures envisagées
