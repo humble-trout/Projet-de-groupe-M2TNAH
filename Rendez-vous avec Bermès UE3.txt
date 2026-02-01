@@ -5,3 +5,47 @@ Ces ateliers durent 30 à 45 mn. Je me chargerai de vous communiquer des dates p
 - que vos questions éventuelles (à mettre dans l'ordre du jour),
 - animer la réunion elle-même (confiez cette tâche à l'un d'entre vous) : accueillir les participants, donner la parole aux uns et aux autres, s'assurer que l'ordre du jour est traité, tenir le temps, conclure la réunion,
 - envoyer un court compte-rendu par mail aux participants, après la réunion.
+
+
+ODJ : 
+
+Présentation rapide et collective du projet, divisé en plusieurs parties :
+
+=> Présentation générale du projet
+
+=> Jeux de données
+
+=> Travail en cours sur le traitement de la donnée et jointures envisagées
+
+Questions du groupe : 
+
+=> Comment utiliser les données wikidata ? 
+
+=> Faire un point sur les datavisualisations du livrable 4 
+
+=> Comment répartir concrètement le travail au sein du groupe dans le développement de l'application ? 
+
+Conclusion de la réunion
+
+NOTES POUR LA PRÉSENTATION : 
+
+Nous disposons actuellement de certains jeux de données en CSV, avec quelques modifications potentielles à faire sur chacun d'entre eux : 
+
+Pour le jeu de données "établissements-cinématographiques" : modifications envisagées ne visent pas à modifier le contenu des données, mais à les rendre plus facilement utilisables en SQL. Ex : 
+=> transformer des formats de données : certaines données, actuellement en VARCHAR, en BOOL pour qu'il n'y ait que 2 options possibles (Ex : catégorie "Art et essai".) 
+=> Changer les noms des cinémas et des régions (passer de sans maj et sans accent à avec maj et accents) 
+=> Ajouter des clés primaires qui permettent de lier ces données au reste
+Jeu de données "programmation-cinémas" : 
+=> Modifications possibles peuvent aussi concerner le traitement des majuscules. 
+=> Pour les dates : changement de format vers format date (jj/mm/aaaa hh:mm)
+=> Ici, le traitement devrait surtout consister à uniformiser les données : savoir quoi faire des lignes vides, etc 
+=> Retirer les doublons 
+Jeu de données wikidata : 
+=> Mettre les dates en format date
+=> S'occuper des cases vides (Ex : films pour lesquels il n'y a pas de réalisateur renseigné) 
+
+Travail à faire sur tous les jeux : uniformiser les données 
+
+Jeu de données du CNC est complet, nickel, rien à modifier 
+
+
