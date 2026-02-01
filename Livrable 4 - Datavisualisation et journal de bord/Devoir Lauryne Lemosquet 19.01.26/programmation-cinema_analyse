@@ -5,3 +5,10 @@ Il s'avère très riche pour des informations de programmation temporelles et g�
 
 Des modifications possibles: 
 
+traitement des majuscules
+changement du format jj/mm/aaaa hh:mm pour correspondre au besoin du flask ?
+ligne pratiquement vide (mais dans la table film ca ira)
+filmgenre filmcountry pb de vide et null non uniforme
+non uniforme pays
+enlever les double reponses
+uniformiser la version (vo vf etc)
