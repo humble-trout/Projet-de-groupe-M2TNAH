@@ -14,6 +14,13 @@ Présentation rapide et collective du projet, divisé en plusieurs parties :
 => Présentation générale du projet
 
 => Jeux de données
+Pour ce projet, nous allons utiliser un jeu de données principal : programmation_cinema, provenant de data.gouv, il présente la programmation d'une centaine de cinémas indépendants en France. 
+Nous utiliserons aussi deux jeux de données du CNC : 
+-geographie_du_cinema_departement qui présente la cartographie des cinémas par département écrans et établissements, densité du parc, entrées du parc, indice de fréquentation. 
+-donnees_cartographiques qui géolocalise les cinémas actifs en 2024. 
+(Ces deux jeux de données ont été actualisés en 2025.)
+Nous aurons également recours à 
+
 
 => Travail en cours sur le traitement de la donnée et jointures envisagées
 
