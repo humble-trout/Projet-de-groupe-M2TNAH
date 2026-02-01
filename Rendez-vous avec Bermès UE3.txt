@@ -48,4 +48,11 @@ Travail à faire sur tous les jeux : uniformiser les données
 
 Jeu de données du CNC est complet, nickel, rien à modifier 
 
+Jointures à faire:
+
+- Croiser programmation-cinémas, géographie-du- cinéma-départements, établissement-cinématographiques en LEFT JOIN pour avoir uniquement les cinémas mentionnés dans notre prog
+- Croiser programmation-cinémas, géographie-du-cinéma-départements, établissement-cinématographiques et programmation-cinémas en INNER JOIN pour la carte interactive
+- Croiser géographie-du-cinéma-départements, Données-cartographie-2024, établissement-cinématographiques, repartition-des-allocataires-selon-le-type-de-rsa-communal en LEFT JOIN
+- Croiser programmation-cinémas avec WikiData en LEFT JOIN pour des infos sur les films
+
 
