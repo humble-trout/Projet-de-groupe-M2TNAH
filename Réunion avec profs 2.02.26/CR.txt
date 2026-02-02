@@ -19,3 +19,85 @@ Scepticisme sur le diagramme en radar
 2 limites au diagramme en radar : avec + de 3 ou 4 entités c'est illisible. Il fait s'assurer que les données sont homogènes (remettre de la proportion dans ce qu'on compare). Ajouter ça au traitement de données
 
 Difficulté à déterminer la nationalité d'un film ? En fait pas un débat 
+
+Notes Joséphine
+Plan SÉANCE 
+CR 
+appli qui met en relation utilisateurs autour de l’univers du cinéma 
+Concerne les cinémas indépendants 
+2000 séances par fichiers 
+fichier datés 
+fonctionnalité 
+base de film proposé en séance 
+information fiches spé 
+recherche par outil recherche avancé à partr d’un cinéma grâce à une carte intéractive 
+outil film séance : DA visualisation, calendrier qui synchronise les séance et intéraction
+synchronisation de calendrier 3 dataviz 
+dot map pour concentration cinéma indépendant 
+line chart fréquentation sur plusieurs années 
+diagramme radar répartition plus spécifique aux programmations des cinémas(langue origine pays) 
+
+opérations sur les données 
+
+rendre les jeux plus facilement utilisables varchar en booleen 
+changer les noms de cinéma jeu sur les majuscules *
+clé primaire pour lier les données au reste 
+prog cinéma
+modifier date changer de format jj mm aaaa 
+le traitement uniformise les données et retire les doublons 
+requêtes wikidata : modif mettre les dates dans le même format
+CNC : jeu complet pas de modif a faire 
+
+travail général sur tous les jeux compatibilité des données pour les traiter ensemble 
+
+jointures réalisés ? 
+Projet croise les jeux entre eux 
+diagramme radar VO/VF dans différents département en Fce 
+programmation cinéma et géo cinéma par dép et établissement en LEFT JOIN 
+clé de jointure ? Clés en commun = A CREER 
+
+ATTENTION nom de cinéma qui reviennent bcp attention cinéma Méliès attention aux faux doublons mettre identifiant commune code postal 
+adresse précise stockée comment ?
+
+line chart : concerne l’évolution des fréquentations des salles de cinéma prog géo départ établissement cinéma en INNER JOIN
+identifier cinéma dans plusieurs jeux de données 
+
+dote map : quantité de cinéma indép avec RSA géog par départ et données de datagouv LEFT JOIN dans quel département on trouve 
+APPLI = moteur de recherche croiser prog ciné et wikidata pour enrichir données de la prog, métadonnées sur les films 
+prog étab INNER JOIN pour que la carte indique les cinema programmés sur la carte
+
+extraction de données via wikidata
+sparQL
+
+requête sparql dans wikidata
+bouton télécharger qui génère un csv 
+
+
+DATAVIZ livrable 4  diagramme en radar pas sur tableau comment on fait ? 
+Quel outil ?  ARD veut voir le process pas juste rendu fini
+
+question codage en flask
+répartition des taches 
+chacun une branche
+1 pers met en place le main 
+une gestion utilisateur
+design final se fait en parallèle
+
+organiser en étape se répartir le travail, jalons intermédiaires 
+identifier les dépendances du projet 
+
+retour cahier des charges ? 
+
+Warning visualisation 
+nouvelles info ? 
+Axes séance = à creuser 
+plus j’ai de séance, moins elles sont remplies etc
+faire dire des choses aux données qu’aucune dit 
+
+sceptique sur le diagramme en radar 
+qu’est-ce qu’on compare ? zones 
+2 limites : selon le nombre d’entités ça peut être illisible pas plus de 4 idées 
+unités sont homogènes
+attention aux échelles
+chiffres relatifs, pourcentages 
+attention aux biais 
