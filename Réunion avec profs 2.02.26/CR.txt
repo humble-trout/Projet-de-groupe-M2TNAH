@@ -1,0 +1,21 @@
+Notes Béa:
+
+Question :jeu de donnés est-il rétrospectif ? Oui. Question : quel historique de donnes envisage-t-on d'avoir ? Besoin d'être clair sur la période traitée sur les dataviz. Besoin de données plus actualisées, besoin d'apporter plus de questionnements sur comment les choses évoluent à travers le temps
+
+Besoin d'utiliser sparql pour wiki data 
+
+Possible d'utiliser un autre outil que tableau
+
+Besoin que la dataviz soit compréhensible, donc besoin de voir le processus de travail de la dataviz 
+
+Flask : chacun a une branche. Une personne peut être charger du main, autre d'une feature comme la gestion des users, affichage des viz , etc. Design final se fait en parallèle. Besoin d'avoir des scopes clairs
+
+Identifier les dépendances du projet (trucs à faire en premier)
+
+Warning sur des viz trop simples de ce que nos données indépendantes disent déjà. Besoin de creuser et de faire dire des choses supplémentaires (est-ce que le taux de fréquentation est stable ? ). Besoin de dire des choses qui ne sont pas dans les sets
+
+Scepticisme sur le diagramme en radar
+
+2 limites au diagramme en radar : avec + de 3 ou 4 entités c'est illisible. Il fait s'assurer que les données sont homogènes (remettre de la proportion dans ce qu'on compare). Ajouter ça au traitement de données
+
+Difficulté à déterminer la nationalité d'un film ? En fait pas un débat 
