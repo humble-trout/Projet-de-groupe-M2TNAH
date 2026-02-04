@@ -101,3 +101,47 @@ unités sont homogènes
 attention aux échelles
 chiffres relatifs, pourcentages 
 attention aux biais 
+
+Notes Raphaël :
+
+
+NOTES : 
+
+traitement rétrospectif pour l'application 
+Question de l'historique va conditionner ce qu'on va faire pour la dataviz 
+Si le traitement de données fonctionne sur une semaine, il fonctionnera pour une autre
+
+Dataviz : Apporter d'autres questions, comment les choses évoluent à travers le tps, dimension spatiale, … 
+Comme on demande de croiser les données sur un modèle de données statiques, on peut pas compter sur l'utilisateur 
+
+Créer des clés de jointure entre les jeux de données => traitement à réaliser ! 
+
+
+Conseil ARD : Nom + département devrait suffire, mais faire gaffe aux cinés qui s'appellent pareil. => Commune (code INSEE à récupérer dans wikidata). 
+
+Créer des ID uniques pour les cinémas. 
+
+
+Wikidata : c'est comme ce qu'on avait fait ! Requêtes SPARQL avec les infos qu'on veut, et ça devient un CSV comme les autres, à partir duquel on fait les jointures pour ajouter ces infos au reste 
+
+Solution pour l'appli : être chacun responsable d'une étape ??
+Étapes de design final par exemple peuvent se faire en parallèle. En reparler à Maxime 
+Enjeux de gestion de projet : bien savoir ce qu'il faut faire pour tt faire en étape, savoir qui doit faire quoi. 
+Il faut bien tout identifier pour pouvoir faire ça 
+
+
+WARNING de Lauryne : faire gaffe, peut-être que les visualisations sont un peu simples. Peut-être creuser la piste des séances et la fréquentation => Ex : Est-ce qu'un ciné qui multiplie les séances se verra augmenter ou non sa fréquentation ? 
+
+Accès à la VO ou la VF selon les dpt (bonne idée selon Bermès) 
+
+ARD : Sceptique sur le diagramme en radar. 
+
+2 limites au diagramme en radar : 
+Selon le nb d'entités, peut devenir illisible (au-delà de 3-4 entités distinctes) 
+Il faut s'assurer que les critères sont homogènes. Si d'un côté on compte des films, et de l'autre des séances, risque de comparer des choses à des échelles différentes, et que le diagramme soit illisible. 
+
+Dans les vues qu'on va produire, sur bcp de sujets on aura des chiffres relatifs plutôt que des chiffres absolus. 
+
+Difficile de déterminer quelle est la nationalité d'un film (Ex : coproductions, …). Peut créer des biais. Se calquer sur la loi fr : obligation d'avoir une certaine qtité de de films fr. 
+
+
