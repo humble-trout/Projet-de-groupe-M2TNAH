@@ -2,7 +2,7 @@
 
 Déposez ici :
 
-    le modèle logique de données (MCD) de la base
+    le modèle logique de données (MLD) de la base
 
     l’accès à la base de données elle-même
 
