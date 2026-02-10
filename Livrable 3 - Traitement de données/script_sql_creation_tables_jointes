@@ -33,7 +33,7 @@ CREATE TABLE TMP_rsa_CNC
 	type_rsa varchar, 
 	nbr_foyer_rsa int,
 	nbr_pers_rsa int
-)
+);
 
 INSERT INTO TMP_rsa_CNC 
 (region_cnc, nom_region, nom_cinema, adresse, code_insee, commune, departement, n_uu, ecrans, fauteuils, seances, entree_24, entree_23, 
