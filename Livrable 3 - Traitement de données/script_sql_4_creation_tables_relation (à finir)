@@ -8,6 +8,12 @@ create table calendrier
 	FOREIGN KEY (id_seance) REFERENCES seance(id_seance)
 );
 
+INSERT INTO calendrier
+(id_utilisateur, id_seance)
+SELECT 
+FROM 
+INNER JOIN    ON 
+INNER JOIN    ON 
 
 --Remplissage de la table "cinema_favori"
 
