@@ -1,3 +1,8 @@
+
+BEGIN ;
+
+SET search_path TO psch;
+
 -- Création d'une table jointe pour réunir les données des différents CSV. Cette table servira a créer les tables définitives 
 CREATE TABLE TMP_rsa_CNC 
 (
