@@ -184,25 +184,6 @@ SELECT DISTINCT
 	pdm_films_ae AS pdm_art_et_essai
 FROM TMP_rsa_CNC ;
 
---création des tables relationnelles
-
-create table calendrier
-(
-	id_utilisateur INTEGER NOT NULL,
-	id_seance INTEGER,
-	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
-	FOREIGN KEY (id_seance) REFERENCES seance(id_seance)
-);
-
-
-
-create table cinema_favori
-(
-	id_utilisateur INTEGER NOT NULL,
-	id_cinema INTEGER,
-	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
-	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
-);
 
 -- Fin du script
 COMMIT ;
