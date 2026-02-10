@@ -73,5 +73,6 @@ FROM TMP_CNC a
 LEFT JOIN TMP_etab_cine b on a.region_cnc = b.region_cnc
 LEFT JOIN TMP_rsa c on a.commune = c.commune ; 
 
+--(Doute sur LEFT JOIN : vérifier si c'est bien la bonne jointure)
 -- Fin du script
 COMMIT ;
