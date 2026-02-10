@@ -1,1 +1,69 @@
+-- Création d'une table jointe pour réunir les données des différents CSV 
+CREATE TABLE TMP_rsa_CNC 
+(
+	region_cnc int not null,
+	nom_region varchar not null, 
+	nom_cinema varchar not null,
+	adresse varchar,
+	code_insee int not null,
+	commune varchar not null,
+	departement varchar not null,
+	n_uu int,
+	ecrans int,
+	fauteuils int,
+	seances int, 
+	entree_24 int,
+	entree_23 int,
+	evolution_entrees int,
+	art_et_essai BOOL,
+	nb_films_programmes int,
+	nb_films_inedits int,
+	pdm_films_francais int,
+	pdm_films_americains int,
+	pdm_films_europeens int,
+	pdm_autres_films int,
+	pdm_films_ae int,
+	latitude real,
+	longitude real,
+	type_rsa varchar, 
+	nbr_foyer_rsa int,
+	nbr_pers_rsa int
+)
 
+INSERT INTO TMP_rsa_CNC 
+(region_cnc, nom_region, nom_cinema, adresse, code_insee, commune, departement, n_uu, ecrans, fauteuils, seances, entree_24, entree_23, 
+evolution_entrees, art_et_essai, nb_films_programmes, nb_films_inedits, pdm_films_francais, pdm_films_americains, pdm_films_europeens, pdm_autres_films, pdm_films_ae,
+latitude, longitude, type_rsa, nbr_foyer_rsa, nbr_pers_rsa)
+SELECT DISTINCT
+	a.region_cnc,
+	a.nom_cinema,
+	a.adresse,
+	a.code_insee,
+	a.commune,
+	a.departement,
+	a.n_uu,
+	a.situation_geographique,
+	a.ecrans,
+	a.fauteuils,
+	a.seances,
+	a.entree_24,
+	a.entree_23,
+	a.evolution_entrees,
+	a.art_et_essai,
+	a.nb_films_programmes,
+	a.nb_films_inedits,
+	a.pdm_films_francais,
+	a.pdm_films_americains,
+	a.pdm_films_europeens,
+	a.pdm_autres_films,
+	a.pdm_films_ae,
+	a.latitude,
+	a.longitude,
+	b.entree_22,
+	b.entree_21,
+	c.type_rsa, 
+	c.nbr_foyer_rsa,
+	c.nbr_pers_rsa 
+FROM TMP_CNC a
+LEFT JOIN TMP_etab_cine b on a.region_cnc = b.region_cnc
+LEFT JOIN TMP_rsa c on a.commune = c.commune ; 
