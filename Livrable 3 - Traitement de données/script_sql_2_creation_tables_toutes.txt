@@ -5,7 +5,7 @@ SET search_path TO psch;
 create table film
 --notes: besoin de rajouter des accents car ils ne sont pas acceptés dans les noms des attributs. table jointe
 (
-	id_film INTEGER NOT NULL PRIMARY KEY,
+	id_film INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	titre VARCHAR NOT NULL,
 	genre VARCHAR,
 	duree INTEGER,
@@ -17,7 +17,7 @@ create table film
 create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
 (
-	id_aire_geographique INTEGER NOT NULL PRIMARY KEY,
+	id_aire_geographique INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	commune VARCHAR NOT NULL,
 	type_rsa VARCHAR,
 	nb_foyers INTEGER,
@@ -33,7 +33,7 @@ create table aire_geographique
 
 create table utilisateur
 (
-	id_utilisateur INTEGER NOT NULL PRIMARY key
+	id_utilisateur INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY
 	--à remplir
 );
 
@@ -41,7 +41,7 @@ create table utilisateur
 create table cinema
 --notes: table jointe
 (
-	id_cinema INTEGER NOT NULL PRIMARY KEY,
+	id_cinema INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_aire_geographique INTEGER NOT NULL,
 	nom_cinema VARCHAR NOT NULL,
 	adresse VARCHAR,
@@ -57,7 +57,7 @@ create table cinema
 create table seance
 --notes: table jointe (?)
 (
-	id_seance INTEGER NOT NULL PRIMARY KEY,
+	id_seance INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_film INTEGER NOT NULL,
 	id_cinema INTEGER NOT NULL,
 	debut DATE,
@@ -73,7 +73,7 @@ create table seance
 create table frequentation
 --notes: FOREIGN KEY ne fonctionne pas tant que cinema n'est pas créé mais cinema a besoin de frequentation pour être créé: problème. table jointe
 (
-	--id_frequentation INTEGER NOT NULL PRIMARY KEY,
+	--id_frequentation INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_cinema INTEGER NOT NULL,
 	evolution_entrees INTEGER,
 	entrees_2021 INTEGER,
@@ -86,7 +86,7 @@ create table frequentation
 create table programmation_cinema
 --notes: table non jointe
 (
-	--id_programmation INTEGER NOT NULL PRIMARY KEY,
+	--id_programmation INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_cinema INTEGER NOT NULL,
 	seances_annuelles INTEGER,
 	art_et_essai BOOL,
