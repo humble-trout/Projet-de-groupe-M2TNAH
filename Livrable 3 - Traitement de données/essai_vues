@@ -1,1 +1,18 @@
+BEGIN;
 
+--VUE_1 : sélectionne les cinémas mentionnés dans la programmation--
+--NOTE : croise les tables programmation-cinémas, géographie-du-cinéma-départements, établissement-cinématographiques en LEFT JOIN--
+--Type d'agrégation: --
+CREATE 
+FROM 
+LEFT JOIN
+
+
+--VUE_2 : sélectionne toutes les données pour construire une carte intéractive--
+--NOTE : croise les tables programmation-cinémas, géographie-du-cinéma-départements, établissement-cinématographiques en INNER JOIN--
+--Type d'agrégation: 
+
+--VUE_3 : compte le nombre de cinéma en fonction de données socio-économique provenant d'un jeu de données sur le RSA--
+--NOTE : croise les tables blabla en ...--
+--Type d'agrégation : 
+COMMIT;
