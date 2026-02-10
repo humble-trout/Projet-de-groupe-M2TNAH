@@ -93,7 +93,7 @@ SELECT DISTINCT
 	realisateur,
 	date_sortie,
 	note 
-FROM TMP_wiki_1 --wikidata 1 et 2 ? 
+FROM TMP_wiki_1 --wikidata 1 et 2 (À FINIR)? 
 
 --remplissage de la table aire_géographique  
 
@@ -181,7 +181,7 @@ INSERT INTO calendrier
 (id_utilisateur, id_seance)
 
 
--- UPDATE (ce que j'avais fait, juste au cas où) : 
+-- UPDATE : 
 
 --UPDATE sur la table cinéma : 
 
