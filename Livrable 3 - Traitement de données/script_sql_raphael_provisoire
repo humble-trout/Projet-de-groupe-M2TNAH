@@ -64,11 +64,14 @@ SELECT DISTINCT
 	a.pdm_films_ae,
 	a.latitude,
 	a.longitude,
-	b.type_rsa, 
-	b.nbr_foyer_rsa,
-	b.nbr_pers_rsa 
+	b.entree_22,
+	b.entree_21,
+	c.type_rsa, 
+	c.nbr_foyer_rsa,
+	c.nbr_pers_rsa 
 FROM TMP_CNC a
-LEFT JOIN TMP_rsa b on a.commune = b.commune
+LEFT JOIN TMP_etab_cine b on a.region_cnc = b.region_cnc
+LEFT JOIN TMP_rsa c on a.commune = c.commune ; 
 
 
 -- Conseil Eva : Faire les jointures entre la table film remplie à partir de wikidata et la table séance remplie à partir de programmation 
@@ -90,7 +93,7 @@ SELECT DISTINCT
 	realisateur,
 	date_sortie,
 	note 
-FROM TMP_wiki_1 --wikidata 1 et 2 ? 
+FROM TMP_wiki_1 --wikidata 1 et 2 (À FINIR)? 
 
 --remplissage de la table aire_géographique  
 
@@ -230,5 +233,4 @@ SET id_cinema
 FROM 
 INNER JOIN 
 WHERE
-
 

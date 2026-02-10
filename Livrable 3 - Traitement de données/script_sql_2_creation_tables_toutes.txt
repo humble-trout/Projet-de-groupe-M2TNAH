@@ -14,6 +14,31 @@ create table film
 	note INTEGER
 );
 
+-- remplissage de la table film 
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	date_sortie,
+	note 
+FROM TMP_wiki1 
+
+UNION
+
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	date_sortie,
+	note 
+FROM TMP_wiki2; 
+
 create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
 (
@@ -29,7 +54,18 @@ create table aire_geographique
 	code_departement INTEGER NOT NULL
 );
 
-
+-- Remplissage de la table aire_geographique
+INSERT INTO aire_geographique 
+(commune, type_rsa, nb_foyers, nb_personnes, region, nom_departement, code_departement)
+SELECT DISTINCT 
+	commune, 
+	type_rsa, 
+	nbr_foyer_rsa AS nb_foyers,
+	nbr_pers_rsa AS nb_personnes, 
+	region_cnc AS region, 
+	departement AS nom_departement, 
+	code_insee AS code_departement
+FROM TMP_rsa_CNC; 
 
 create table utilisateur
 (
@@ -54,6 +90,21 @@ create table cinema
 	FOREIGN KEY (id_aire_geographique) REFERENCES aire_geographique(id_aire_geographique)
 );
 
+--remplissage de la table "cinema"
+
+INSERT INTO cinema
+(nom_cinema, adresse, longitude, latitude, numero_uu, ecrans, fauteuils, capacite_totale)
+SELECT DISTINCT 
+	nom_cinema, 
+	adresse, 
+	longitude,
+	latitude,
+	n_uu AS numero_uu, 
+	ecrans,
+	fauteuils,
+	capacite_totale
+FROM TMP_rsa_CNC ; 
+
 create table seance
 --notes: table jointe (?)
 (
@@ -69,6 +120,15 @@ create table seance
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
 
+INSERT INTO seance
+(debut, fin, ST, version, nb_places)
+SELECT DISTINCT 
+	debut_seance AS debut, 
+	fin_seance AS fin, 
+	sous_titres AS ST, 
+	version_audio AS version, 
+	nbr_place AS nb_places
+FROM TMP_programmation ; 
 
 create table frequentation
 --notes: FOREIGN KEY ne fonctionne pas tant que cinema n'est pas créé mais cinema a besoin de frequentation pour être créé: problème. table jointe
@@ -82,6 +142,16 @@ create table frequentation
 	entrees_2024 INTEGER,
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
+-- Remplissage de la table fréquentation 
+INSERT INTO frequentation 
+(evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
+SELECT DISTINCT 
+	evolution_entrees,
+	entree_21 AS entrees_2021, 
+	entree_22 AS entrees_2022, 
+	entree_23 AS entrees_2023,
+	entree_24 AS entrees_2024 
+FROM TMP_rsa_CNC ; 
 
 create table programmation_cinema
 --notes: table non jointe
@@ -99,6 +169,20 @@ create table programmation_cinema
 	pdm_art_et_essai INTEGER,
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
+
+--remplissage de la table programmation_cinema
+INSERT INTO programmation_cinema
+(art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
+SELECT DISTINCT 
+	art_et_essai, 
+	nb_films_inedits,
+	nb_films_programmes,
+	pdm_films_francais AS pdm_fr,
+	pdm_films_americains AS pdm_us,
+	pdm_films_europeens AS pdm_ue,
+	pdm_autres_films AS pdm_autres_films,
+	pdm_films_ae AS pdm_art_et_essai
+FROM TMP_rsa_CNC ;
 
 --création des tables relationnelles
 
