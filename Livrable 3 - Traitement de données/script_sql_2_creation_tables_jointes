@@ -6,33 +6,33 @@ SET search_path TO psch;
 -- Création d'une table jointe pour réunir les données des différents CSV. Cette table servira a créer les tables définitives 
 CREATE TABLE TMP_rsa_CNC 
 (
-	region_cnc int not null,
-	nom_region varchar not null, 
-	nom_cinema varchar not null,
-	adresse varchar,
-	code_insee int not null,
-	commune varchar not null,
-	departement varchar not null,
-	n_uu int,
-	ecrans int,
-	fauteuils int,
-	seances int, 
-	entree_24 int,
-	entree_23 int,
-	evolution_entrees int,
+	region_cnc INTEGER NOT NULL,
+	nom_region VARCHAR NOT NULL, 
+	nom_cinema VARCHAR NOT NULL,
+	adresse VARCHAR,
+	code_insee INTEGER NOT NULL,
+	commune varchar NOT NULL,
+	departement varchar NOT NULL,
+	n_uu INTEGER,
+	ecrans INTEGER,
+	fauteuils INTEGER,
+	seances INTEGER, 
+	entree_24 INTEGER,
+	entree_23 INTEGER,
+	evolution_entrees INTEGER,
 	art_et_essai BOOL,
-	nb_films_programmes int,
-	nb_films_inedits int,
-	pdm_films_francais int,
-	pdm_films_americains int,
-	pdm_films_europeens int,
-	pdm_autres_films int,
-	pdm_films_ae int,
+	nb_films_programmes INTEGER,
+	nb_films_inedits INTEGER,
+	pdm_films_francais INTEGER,
+	pdm_films_americains INTEGER,
+	pdm_films_europeens INTEGER,
+	pdm_autres_films INTEGER,
+	pdm_films_ae INTEGER,
 	latitude real,
 	longitude real,
-	type_rsa varchar, 
-	nbr_foyer_rsa int,
-	nbr_pers_rsa int
+	type_rsa VARCHAR, 
+	nbr_foyer_rsa INTEGER,
+	nbr_pers_rsa INTEGER
 );
 
 INSERT INTO TMP_rsa_CNC 
@@ -73,5 +73,6 @@ FROM TMP_CNC a
 LEFT JOIN TMP_etab_cine b on a.region_cnc = b.region_cnc
 LEFT JOIN TMP_rsa c on a.commune = c.commune ; 
 
+--(Doute sur LEFT JOIN : vérifier si c'est bien la bonne jointure)
 -- Fin du script
 COMMIT ;

@@ -1,0 +1,32 @@
+
+create table calendrier
+(
+	id_utilisateur INTEGER NOT NULL,
+	id_seance INTEGER,
+	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
+	FOREIGN KEY (id_seance) REFERENCES seance(id_seance)
+);
+
+INSERT INTO calendrier
+(id_utilisateur, id_seance)
+SELECT a.id_utilisateur, c.
+FROM 
+INNER JOIN    ON 
+
+
+--Remplissage de la table "cinema_favori"
+
+INSERT INTO cinema_favori
+(id_utilisateur, id_cinema)
+SELECT 
+FROM 
+INNER JOIN 
+
+
+create table cinema_favori
+(
+	id_utilisateur INTEGER NOT NULL,
+	id_cinema INTEGER,
+	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
+	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
+);
