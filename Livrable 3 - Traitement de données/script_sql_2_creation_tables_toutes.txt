@@ -94,7 +94,20 @@ SELECT DISTINCT
 	realisateur,
 	date_sortie,
 	note 
-FROM TMP_wiki_1 ???
+FROM TMP_wiki1 
+
+UNION
+
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	date_sortie,
+	note 
+FROM TMP_wiki2; 
 
 create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
