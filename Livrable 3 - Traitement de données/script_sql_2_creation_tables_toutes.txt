@@ -170,6 +170,20 @@ create table programmation_cinema
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
 
+--remplissage de la table programmation_cinema
+INSERT INTO programmation_cinema
+(art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
+SELECT DISTINCT 
+	art_et_essai, 
+	nb_films_inedits,
+	nb_films_programmes,
+	pdm_films_francais AS pdm_fr,
+	pdm_films_americains AS pdm_us,
+	pdm_films_europeens AS pdm_ue,
+	pdm_autres_films AS pdm_autres_films,
+	pdm_films_ae AS pdm_art_et_essai
+FROM TMP_rsa_CNC ;
+
 --création des tables relationnelles
 
 create table calendrier
