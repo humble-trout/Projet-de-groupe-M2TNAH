@@ -1,5 +1,3 @@
--- Création de tables jointes: création des tables dont les données proviendront de différentes sources
-
 BEGIN ;
 
 SET search_path TO psch;
