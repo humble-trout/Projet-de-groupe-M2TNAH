@@ -1,0 +1,182 @@
+--remplissage des tables jointes
+
+-- D'abord faire les jointures entre les différentes tables de travail (insérer les données pour les différentes sources)
+
+--remplissage de la table jointe tmp_rs
+
+INSERT INTO TMP_rsa_CNC 
+(region, nom_departement, code_insee, commune, type_rsa, nbr_foyer_rsa, nbr_pers_rsa,)
+SELECT DISTINCT
+	a.region_cnc,
+	a.adresse,
+	a.code_insee,
+	a.commune,
+	a.departement,
+	b.type_rsa,
+	b.nbr_foyer_rsa,
+	b.nbr_pers_rsa 
+FROM TMP_CNC
+LEFT JOIN TMP_rsa
+-- J'ai pas du tout fini ce truc là, je continue cet aprem 
+-- ATTENTION : DANS LE CODE DE BEATRICE, IL FAUT FAIRE EN SORTE QUE LES CLÉS PRIMAIRES SOIENT GÉNÉRÉES AUTOMATIQUEMENT "GENERATED ALWAYS AS IDENTITY PRIMARY KEY" (cf code Lemosquet)
+-- Conseil Eva : Faire les jointures entre la table film remplie à partir de wikidata et la table séance remplie à partir de programmation 
+
+--Depuis TMP_CNC, besoin des infos suivantes : nom_cinema, longitude, latitude, pdm_films_francais, pdm_films_americains, pdm_films_europeens, pdm_autres_films, pdm_films_ae
+--entree_24, entree_23, evolution_entrees
+
+--Depuis TMP_etab_cine
+
+
+
+-- remplissage des tables définitives
+ 
+
+-- remplissage de la table film 
+INSERT INTO film 
+(titre, genre, dure, realisateur, date, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	date,
+	note
+FROM TMP_wiki_1 --wikidata 1 et 2 ? 
+
+--remplissage de la table aire_géographique  
+
+INSERT INTO aire_geographique 
+(commune, type_rsa, nb_foyers, nb_personnes, region, nom_departement, code_departement)
+SELECT DISTINCT 
+	commune, 
+	type_rsa, 
+	nbr_foyer_rsa AS nb_foyers,
+	nbr_pers_rsa AS nb_personnes, 
+	region_cnc AS region, 
+	departement AS nom_departement, 
+	code_insee AS code_departement,
+FROM TMP_rsa_CNC; 
+
+--remplissage de la table fréquentation 
+
+INSERT INTO frequentation 
+(evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
+SELECT DISTINCT 
+	evolution_entrees,
+	entree_21 AS entrees_ 2021, 
+	entree_22 AS entrees_2022, 
+	entree_23 AS entrees_2023,
+	entree_24 AS entrees_2024, 
+FROM TMP_rsa_CNC; 
+
+--remplissage de la table programmation_cinema
+INSERT INTO programmation_cinema
+(art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
+SELECT DISTINCT 
+--Voir s'il faut joindre avec une autre table, j'ai pas tout compris (pour l'id_cinema par exemple)!!--
+	art_et_essai, 
+	nb_films_inedits,
+	nb_films_programmes,
+	pdm_films_francais AS pdm_fr,
+	pdm_films_americains AS pdm_us,
+	pdm_films_europeens AS pdm_ue,
+	pdm_autres_films AS pdm_autres_films,
+	pdm_films_ae AS pdm_art_et_essai
+FROM TMP_rsa_CNC ;
+
+--remplissage de la table séance 
+
+INSERT INTO seance
+(debut, fin, ST, version, nb_places)
+SELECT DISTINCT 
+	debut_seance AS debut, 
+	fin_seance AS fin, 
+	sous_titres AS ST, 
+	version_audio AS version, 
+	nbr_place AS nb_places
+FROM TMP_rsa_CNC; 
+	
+	
+
+
+--remplissage de la table "cinema"
+
+INSERT INTO cinema
+(nom_cinema, adresse, longitude, latitude, numero_uu, ecrans, fauteuils, capacite_totale)
+SELECT DISTINCT 
+	nom_cinema, 
+	adresse, 
+	longitude,
+	latitude,
+	n_uu AS numero_uu, 
+	ecrans,
+	fauteuils,
+	capacite_totale
+FROM TMP 
+	
+
+
+-- !! Remplissage des tables de relation !! (APRÈS AVOIR FAIT LE RESTE)
+
+--Remplissage de la table "cinema_favori"
+
+INSERT INTO cinema_favori
+(id_utilisateur, id_cinema)
+SELECT 
+
+
+
+
+-- UPDATE : 
+
+--UPDATE sur la table cinéma : 
+
+UPDATE cinema 
+SET id_frequentation 
+FROM 
+INNER JOIN 
+WHERE
+
+UPDATE cinema 
+SET id_programmation 
+FROM 
+INNER JOIN 
+WHERE
+
+UPDATE cinema 
+SET id_aire_geographique 
+FROM 
+INNER JOIN 
+WHERE
+
+
+--UPDATE sur la table séance : 
+
+UPDATE seance  
+SET id_film 
+FROM 
+INNER JOIN 
+WHERE
+
+UPDATE seance 
+SET id_cinema
+FROM 
+INNER JOIN 
+WHERE
+
+--UPDATE sur la table programmation_cinema : 
+
+UPDATE programmation_cinema  
+SET id_cinema
+FROM 
+INNER JOIN 
+WHERE
+
+--UPDATE sur la table fréquentation 
+
+UPDATE frequentation   
+SET id_cinema
+FROM 
+INNER JOIN 
+WHERE
+
