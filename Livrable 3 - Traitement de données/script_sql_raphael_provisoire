@@ -4,25 +4,74 @@
 
 --remplissage de la table jointe tmp_rs
 
+CREATE TABLE TMP_rsa_CNC 
+(
+	region_cnc int not null,
+	nom_region varchar not null, 
+	nom_cinema varchar not null,
+	adresse varchar,
+	code_insee int not null,
+	commune varchar not null,
+	departement varchar not null,
+	n_uu int,
+	ecrans int,
+	fauteuils int,
+	seances int, 
+	entree_24 int,
+	entree_23 int,
+	evolution_entrees int,
+	art_et_essai BOOL,
+	nb_films_programmes int,
+	nb_films_inedits int,
+	pdm_films_francais int,
+	pdm_films_americains int,
+	pdm_films_europeens int,
+	pdm_autres_films int,
+	pdm_films_ae int,
+	latitude real,
+	longitude real,
+	type_rsa varchar, 
+	nbr_foyer_rsa int,
+	nbr_pers_rsa int
+)
+
 INSERT INTO TMP_rsa_CNC 
-(region, nom_departement, code_insee, commune, type_rsa, nbr_foyer_rsa, nbr_pers_rsa,)
+(region_cnc, nom_region, nom_cinema, adresse, code_insee, commune, departement, n_uu, ecrans, fauteuils, seances, entree_24, entree_23, 
+evolution_entrees, art_et_essai, nb_films_programmes, nb_films_inedits, pdm_films_francais, pdm_films_americains, pdm_films_europeens, pdm_autres_films, pdm_films_ae,
+latitude, longitude, type_rsa, nbr_foyer_rsa, nbr_pers_rsa)
 SELECT DISTINCT
 	a.region_cnc,
+	a.nom_cinema,
 	a.adresse,
 	a.code_insee,
 	a.commune,
 	a.departement,
-	b.type_rsa,
+	a.n_uu,
+	a.situation_geographique,
+	a.ecrans,
+	a.fauteuils,
+	a.seances,
+	a.entree_24,
+	a.entree_23,
+	a.evolution_entrees,
+	a.art_et_essai,
+	a.nb_films_programmes,
+	a.nb_films_inedits,
+	a.pdm_films_francais,
+	a.pdm_films_americains,
+	a.pdm_films_europeens,
+	a.pdm_autres_films,
+	a.pdm_films_ae,
+	a.latitude,
+	a.longitude,
+	b.type_rsa, 
 	b.nbr_foyer_rsa,
 	b.nbr_pers_rsa 
-FROM TMP_CNC
-LEFT JOIN TMP_rsa
--- J'ai pas du tout fini ce truc là, je continue cet aprem 
--- ATTENTION : DANS LE CODE DE BEATRICE, IL FAUT FAIRE EN SORTE QUE LES CLÉS PRIMAIRES SOIENT GÉNÉRÉES AUTOMATIQUEMENT "GENERATED ALWAYS AS IDENTITY PRIMARY KEY" (cf code Lemosquet)
--- Conseil Eva : Faire les jointures entre la table film remplie à partir de wikidata et la table séance remplie à partir de programmation 
+FROM TMP_CNC a
+LEFT JOIN TMP_rsa b on a.commune = b.commune
 
---Depuis TMP_CNC, besoin des infos suivantes : nom_cinema, longitude, latitude, pdm_films_francais, pdm_films_americains, pdm_films_europeens, pdm_autres_films, pdm_films_ae
---entree_24, entree_23, evolution_entrees
+
+-- Conseil Eva : Faire les jointures entre la table film remplie à partir de wikidata et la table séance remplie à partir de programmation 
 
 --Depuis TMP_etab_cine
 
@@ -33,14 +82,14 @@ LEFT JOIN TMP_rsa
 
 -- remplissage de la table film 
 INSERT INTO film 
-(titre, genre, dure, realisateur, date, note)
+(titre, genre, duree, realisateur, date_sortie, note)
 SELECT DISTINCT 
 	titre,
 	genre,
 	duree,
 	realisateur,
-	date,
-	note
+	date_sortie,
+	note 
 FROM TMP_wiki_1 --wikidata 1 et 2 ? 
 
 --remplissage de la table aire_géographique  
@@ -54,7 +103,7 @@ SELECT DISTINCT
 	nbr_pers_rsa AS nb_personnes, 
 	region_cnc AS region, 
 	departement AS nom_departement, 
-	code_insee AS code_departement,
+	code_insee AS code_departement
 FROM TMP_rsa_CNC; 
 
 --remplissage de la table fréquentation 
@@ -63,17 +112,16 @@ INSERT INTO frequentation
 (evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
 SELECT DISTINCT 
 	evolution_entrees,
-	entree_21 AS entrees_ 2021, 
+	entree_21 AS entrees_2021, 
 	entree_22 AS entrees_2022, 
 	entree_23 AS entrees_2023,
-	entree_24 AS entrees_2024, 
-FROM TMP_rsa_CNC; 
+	entree_24 AS entrees_2024 
+FROM TMP_rsa_CNC ; 
 
 --remplissage de la table programmation_cinema
 INSERT INTO programmation_cinema
 (art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
 SELECT DISTINCT 
---Voir s'il faut joindre avec une autre table, j'ai pas tout compris (pour l'id_cinema par exemple)!!--
 	art_et_essai, 
 	nb_films_inedits,
 	nb_films_programmes,
@@ -94,9 +142,7 @@ SELECT DISTINCT
 	sous_titres AS ST, 
 	version_audio AS version, 
 	nbr_place AS nb_places
-FROM TMP_rsa_CNC; 
-	
-	
+FROM TMP_programmation ; 
 
 
 --remplissage de la table "cinema"
@@ -112,7 +158,7 @@ SELECT DISTINCT
 	ecrans,
 	fauteuils,
 	capacite_totale
-FROM TMP 
+FROM TMP_rsa_CNC ; 
 	
 
 
@@ -123,8 +169,13 @@ FROM TMP
 INSERT INTO cinema_favori
 (id_utilisateur, id_cinema)
 SELECT 
+FROM 
+INNER JOIN 
 
+--Remplissage de la table "calendrier"
 
+INSERT INTO calendrier
+(id_utilisateur, id_seance)
 
 
 -- UPDATE : 
@@ -132,14 +183,14 @@ SELECT
 --UPDATE sur la table cinéma : 
 
 UPDATE cinema 
-SET id_frequentation 
+SET id_frequentation = 
 FROM 
 INNER JOIN 
 WHERE
 
 UPDATE cinema 
 SET id_programmation 
-FROM 
+FROM programmation_cinema
 INNER JOIN 
 WHERE
 
@@ -179,4 +230,5 @@ SET id_cinema
 FROM 
 INNER JOIN 
 WHERE
+
 
