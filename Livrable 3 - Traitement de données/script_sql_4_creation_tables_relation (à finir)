@@ -1,4 +1,3 @@
---création des tables de relation
 
 create table calendrier
 (
@@ -10,10 +9,10 @@ create table calendrier
 
 INSERT INTO calendrier
 (id_utilisateur, id_seance)
-SELECT 
+SELECT a.id_utilisateur, c.
 FROM 
 INNER JOIN    ON 
-INNER JOIN    ON 
+
 
 --Remplissage de la table "cinema_favori"
 
@@ -31,9 +30,3 @@ create table cinema_favori
 	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
-
-
---Remplissage de la table "calendrier"
-
-INSERT INTO calendrier
-(id_utilisateur, id_seance)
