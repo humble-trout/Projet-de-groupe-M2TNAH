@@ -2,8 +2,9 @@ BEGIN;
 
 --VUE_1 : sélectionne les cinémas mentionnés dans la programmation--
 --NOTE : croise les tables programmation_cinémas, aire_geographique, cinema en LEFT JOIN--
---Type d'agrégation: à remplir --
+--Type d'agrégation: A FINIR --
 create view vw_cinemas_programmes as 
+(
 SELECT
     programmation_cinema.id_programmation,
     programmation_cinema.id_cinema,
@@ -15,21 +16,38 @@ FROM programmation_cinema
 LEFT JOIN cinema
     ON programmation_cinema.id_cinema = cinema.id_cinema
 LEFT JOIN aire_geographique
-    ON cinema.id_aire_geographique = aire_geographique.id_aire_geographique;
-
-
-
---VUE_2 : sélectionne toutes les données pour construire une carte intéractive--
---NOTE : croise les tables programmation-cinémas, géographie-du-cinéma-départements, établissement-cinématographiques en INNER JOIN--
---Type d'agrégation: 
---copie cours à finir --
-create view vw_coordonnees_geographiques as
-(
-select b."label" as genre, round(avg(devis))
-from  a
-inner join genre b on a.id_genre = b.id_genre
-group by b."label"
+    ON cinema.id_aire_geographique = aire_geographique.id_aire_geographique
 );
+
+
+-- EN COURS D'ELABORATION--
+--VUE_2 : sélectionne les données géographiques afin d'aboutir à une carte intéractive--
+--NOTE : croise les tables programmation_cinemas, aire_geographique, cinemas en INNER JOIN--
+--Type d'agrégation: A DEFINIR 
+CREATE VIEW vw_carte_interactive AS
+(
+SELECT
+    aire_geographique.id_aire_geographique,
+    aire_geographique.nom_aire_geographique,
+    aire_geographique.latitude,
+    aire_geographique.longitude,
+    cinemas.id_cinemas,
+    cinemas.nom_cinemas,
+    COUNT(programmation_cinemas.id_programmation_cinemas) AS nb_seances
+FROM programmation_cinemas 
+INNER JOIN cinemas 
+    ON programmation_cinemas.id_cinemas = cinemas.id_cinemas
+INNER JOIN aire_geographique
+    ON cinemas.id_aire_geographique = aire_geographique.id_aire_geographique
+GROUP BY
+    aire_geographique.id_aire_geographique,
+    aire_geographique.nom_aire_geographique,
+    aire_geographique.latitude,
+    aire_geographique.longitude,
+    ciemas.id_cinemas,
+    cinemas.nom_cinemas
+);
+
 
 --VUE_3 : compte le nombre de cinéma en fonction de données socio-économique provenant d'un jeu de données sur le RSA--
 --NOTE : croise les tables Croiser géographie-du-cinéma-départements, Données-cartographie-2024, établissement-cinématographiques, repartition-des-allocataires-selon-le-type-de-rsa-communal en LEFT JOIN--
