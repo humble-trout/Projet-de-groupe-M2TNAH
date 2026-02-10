@@ -1,4 +1,4 @@
--- Création d'une table jointe pour réunir les données des différents CSV 
+-- Création d'une table jointe pour réunir les données des différents CSV. Cette table servira a créer les tables définitives 
 CREATE TABLE TMP_rsa_CNC 
 (
 	region_cnc int not null,
