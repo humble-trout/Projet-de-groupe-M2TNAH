@@ -1,1 +1,20 @@
+--création des tables de relation
+
+create table calendrier
+(
+	id_utilisateur INTEGER NOT NULL,
+	id_seance INTEGER,
+	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
+	FOREIGN KEY (id_seance) REFERENCES seance(id_seance)
+);
+
+
+
+create table cinema_favori
+(
+	id_utilisateur INTEGER NOT NULL,
+	id_cinema INTEGER,
+	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
+	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
+);
 
