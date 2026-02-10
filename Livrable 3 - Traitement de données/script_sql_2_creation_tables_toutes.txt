@@ -124,7 +124,18 @@ create table aire_geographique
 	code_departement INTEGER NOT NULL
 );
 
-
+-- Remplissage de la table aire_geographique
+INSERT INTO aire_geographique 
+(commune, type_rsa, nb_foyers, nb_personnes, region, nom_departement, code_departement)
+SELECT DISTINCT 
+	commune, 
+	type_rsa, 
+	nbr_foyer_rsa AS nb_foyers,
+	nbr_pers_rsa AS nb_personnes, 
+	region_cnc AS region, 
+	departement AS nom_departement, 
+	code_insee AS code_departement
+FROM TMP_rsa_CNC; 
 
 create table utilisateur
 (
