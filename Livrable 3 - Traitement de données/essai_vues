@@ -1,7 +1,7 @@
 BEGIN;
 
 --VUE_1 : sélectionne les cinémas mentionnés dans la programmation--
---NOTE : croise les tables programmation-cinémas, géographie-du-cinéma-départements, établissement-cinématographiques en LEFT JOIN--
+--NOTE : croise les tables programmation_cinémas, aire_geographique, cinema en LEFT JOIN--
 --Type d'agrégation: à remplir --
 create view vw_cinemas_programmes as 
 SELECT
