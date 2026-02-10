@@ -84,6 +84,18 @@ create table film
 	note INTEGER
 );
 
+-- remplissage de la table film 
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	date_sortie,
+	note 
+FROM TMP_wiki_1 ???
+
 create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
 (
