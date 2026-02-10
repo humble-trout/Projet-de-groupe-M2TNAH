@@ -12,12 +12,9 @@ create table film
 (
 	id_film INTEGER NOT NULL PRIMARY KEY,
 	titre VARCHAR NOT NULL,
-	affiche VARCHAR,
 	genre VARCHAR,
 	duree INTEGER,
-	distribution VARCHAR,
 	realisateur VARCHAR,
-	synopsis TEXT,
 	bande_annonce VARCHAR,
 	note INTEGER
 );
