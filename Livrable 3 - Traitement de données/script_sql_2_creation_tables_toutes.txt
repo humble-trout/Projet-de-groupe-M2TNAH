@@ -160,6 +160,21 @@ create table cinema
 	FOREIGN KEY (id_aire_geographique) REFERENCES aire_geographique(id_aire_geographique)
 );
 
+--remplissage de la table "cinema"
+
+INSERT INTO cinema
+(nom_cinema, adresse, longitude, latitude, numero_uu, ecrans, fauteuils, capacite_totale)
+SELECT DISTINCT 
+	nom_cinema, 
+	adresse, 
+	longitude,
+	latitude,
+	n_uu AS numero_uu, 
+	ecrans,
+	fauteuils,
+	capacite_totale
+FROM TMP_rsa_CNC ; 
+
 create table seance
 --notes: table jointe (?)
 (
