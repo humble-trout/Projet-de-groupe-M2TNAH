@@ -9,6 +9,14 @@ create table calendrier
 );
 
 
+--Remplissage de la table "cinema_favori"
+
+INSERT INTO cinema_favori
+(id_utilisateur, id_cinema)
+SELECT 
+FROM 
+INNER JOIN 
+
 
 create table cinema_favori
 (
@@ -18,3 +26,8 @@ create table cinema_favori
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
 
+
+--Remplissage de la table "calendrier"
+
+INSERT INTO calendrier
+(id_utilisateur, id_seance)
