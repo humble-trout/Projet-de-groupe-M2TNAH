@@ -72,3 +72,6 @@ SELECT DISTINCT
 FROM TMP_CNC a
 LEFT JOIN TMP_etab_cine b on a.region_cnc = b.region_cnc
 LEFT JOIN TMP_rsa c on a.commune = c.commune ; 
+
+-- Fin du script
+COMMIT ;
