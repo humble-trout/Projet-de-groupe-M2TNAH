@@ -26,15 +26,15 @@ create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
 (
 	id_aire_geographique INTEGER NOT NULL PRIMARY KEY,
-	commune varchar not null,
-	type_rsa varchar,
-	nb_foyers int,
-	nb_personnes int,
-	region int not null,
+	commune VARCHAR NUT NULL,
+	type_rsa VARCHAR,
+	nb_foyers INTEGER,
+	nb_personnes INTEGER,
+	region INTEGER NOT NULL,
 	--intérêt de region et nom_region séparés?
-	nom_region varchar not null,
-	nom_departement varchar not null,
-	code_departement integer not null
+	nom_region VARCHAR NOT NULL,
+	nom_departement VARCHAR NOT NULL,
+	code_departement INTEGER NOT NULL
 )
 ;
 
@@ -71,14 +71,14 @@ create table seance
 --notes: table jointe (?)
 (
 	id_seance INTEGER NOT NULL PRIMARY KEY,
-	id_film integer not null,
+	id_film INTEGER NOT NULL,
 	id_cinema INTEGER NOT NULL,
-	debut date,
-	fin date,
+	debut DATE,
+	fin DATE,
 	--"end" est un mot clé SQL et ne marche pas en nom d'attribut. j'ai aussi modifié "start" en "debut"
-	ST boolean,
-	version varchar,
-	nb_places integer
+	st BOOLEAN,
+	version VARCHAR,
+	nb_places INTEGER
 	--FOREIGN KEY (id_film) REFERENCES film(id_film)
 	--FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 )
@@ -88,18 +88,17 @@ create table cinema
 --notes: table jointe
 (
 	id_cinema INTEGER NOT NULL PRIMARY KEY,
-	id_frequentation integer not null,
+	id_frequentation INTEGER NOT NULL,
 	id_programmation INTEGER NOT NULL,
-	id_aire_geographique integer not null,
-	nom_cinema varchar not null,
-	adresse varchar,
-	longitude real,
-	latitude real,
-	numero_uu int,
-	--° n'est pas accepté dans le nom d'un attribut
-	ecrans int,
-	fauteuils int,
-	capacite_totale int
+	id_aire_geographique INTEGER NOT NULL,
+	nom_cinema VARCHAR NOT NULL,
+	adresse VARCHAR,
+	longitude REAL,
+	latitude REAL,
+	numero_uu INTEGER,
+	ecrans INTEGER,
+	fauteuils INTEGER,
+	capacite_totale INTEGER
 	--FOREIGN KEY (id_frequentation) REFERENCES film(id_frequentation),
 	--FOREIGN KEY (id_programmation) REFERENCES cinema(id_programmation),
 	--FOREIGN KEY (id_aire_geographique) REFERENCES cinema(id_aire_geographique)
@@ -117,8 +116,8 @@ create table utilisateur
 
 create table calendrier
 (
-	id_utilisateur INTEGER NOT null,
-	id_seance integer not null
+	id_utilisateur INTEGER NOT NULL,
+	id_seance INTEGER NOT NULL
 	--FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
 	--FOREIGN KEY (id_seance) REFERENCES seance(id_seance)
 )
@@ -126,8 +125,8 @@ create table calendrier
 
 create table cinema_favori
 (
-	id_utilisateur INTEGER NOT null,
-	id_cinema integer not null
+	id_utilisateur INTEGER NOT NULL,
+	id_cinema INTEGER NOT NULL
 	--FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
 	--FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 )
