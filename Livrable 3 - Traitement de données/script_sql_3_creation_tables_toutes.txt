@@ -10,7 +10,7 @@ create table film
 	genre VARCHAR,
 	duree INTEGER,
 	realisateur VARCHAR,
-	bande_annonce VARCHAR,
+	date_sortie VARCHAR,
 	note INTEGER
 );
 
