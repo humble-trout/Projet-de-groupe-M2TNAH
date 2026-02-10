@@ -1,56 +1,68 @@
 BEGIN;
 
---VUE_1 : sélectionne les cinémas mentionnés dans la programmation--
---NOTE : croise les tables programmation_cinémas, aire_geographique, cinema en LEFT JOIN--
---Type d'agrégation: A FINIR --
-create view vw_cinemas_programmes as 
+--VUE_1 : nombre de cinéma indépendants en fonction du type de RSA dans une zone donnée (implique de connaitre aussi la taille du cinéma) pour créer une dataviz DOT MAP--
+--NOTE : croise les tables cinemas, aire_geographique --
+--Type d'agrégation: round ?  --
+CREATE VIEW vw_dotmap_cinemas_rsa AS
 (
 SELECT
-    programmation_cinema.id_programmation,
-    programmation_cinema.id_cinema,
     cinema.nom_cinema,
-    aire_geographique.commune,
-    aire_geographique.nom_departement,
-    aire_geographique.code_departement
-FROM programmation_cinema
-LEFT JOIN cinema
-    ON programmation_cinema.id_cinema = cinema.id_cinema
-LEFT JOIN aire_geographique
-    ON cinema.id_aire_geographique = aire_geographique.id_aire_geographique
+    commune,
+    cinema.code_insee,
+    cinema.latitude,
+    cinema.longitude,
+    cinema.fauteuils,
+    cinema.ecrans,
+    aire_geographique.nb_pers,
+    aire_geographique..nb_foyer,
+    cinema.population_commune,
+--inserer round ??--
+    ) AS 
+FROM cinema
+INNER JOIN rsa ??
+    ON 
+WHERE cinema??
 );
 
+---
 
--- EN COURS D'ELABORATION--
---VUE_2 : sélectionne les données géographiques afin d'aboutir à une carte intéractive--
---NOTE : croise les tables programmation_cinemas, aire_geographique, cinemas en INNER JOIN--
---Type d'agrégation: A DEFINIR 
-CREATE VIEW vw_carte_interactive AS
+--VUE_2 : évolution de la fréquentation des cinémas indépendants entre 2021 et 2024 pour créer une dataviz LINE CHART--
+--NOTE : croise les tables cinemas, frequentation--
+--Type d'agrégation: sum ?  --
+CREATE VIEW vw_evolution_frequentation AS
 (
 SELECT
-    aire_geographique.id_aire_geographique,
-    aire_geographique.nom_aire_geographique,
-    aire_geographique.latitude,
-    aire_geographique.longitude,
-    cinemas.id_cinemas,
-    cinemas.nom_cinemas,
-    COUNT(programmation_cinemas.id_programmation_cinemas) AS nb_seances
-FROM programmation_cinemas 
-INNER JOIN cinemas 
-    ON programmation_cinemas.id_cinemas = cinemas.id_cinemas
-INNER JOIN aire_geographique
-    ON cinemas.id_aire_geographique = aire_geographique.id_aire_geographique
-GROUP BY
-    aire_geographique.id_aire_geographique,
-    aire_geographique.nom_aire_geographique,
-    aire_geographique.latitude,
-    aire_geographique.longitude,
-    ciemas.id_cinemas,
-    cinemas.nom_cinemas
+    annee,
+    SUM(entrees) AS total_entrees
+FROM (
+    SELECT 2021 AS annee, entree_2021 AS entrees
+    FROM cinema
+    WHERE ??
+    UNION ALL
+
+    SELECT 2022 AS annee, entree_2022
+    FROM cinemas
+    WHERE ??
+
+    UNION ALL
+
+    SELECT 2023 AS annee, entree_2023
+    FROM cinemas
+    WHERE ??
+
+    UNION ALL
+
+    SELECT 2024 AS annee, entree_2024
+    FROM cinemas
+    WHERE ??
+) 
+GROUP BY annee
+ORDER BY annee
 );
 
 
---VUE_3 : compte le nombre de cinéma en fonction de données socio-économique provenant d'un jeu de données sur le RSA--
---NOTE : croise les tables Croiser géographie-du-cinéma-départements, Données-cartographie-2024, établissement-cinématographiques, repartition-des-allocataires-selon-le-type-de-rsa-communal en LEFT JOIN--
---Type d'agrégation : à remplir--
---je galère un peu sur celle-ci--
+
+
+--VUE_3 : propose de voir l'origine des films VO/VF pour aboutir à une dataviz en DIAGRAM RADAR--
+
 COMMIT;
