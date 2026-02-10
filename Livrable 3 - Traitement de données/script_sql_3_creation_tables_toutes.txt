@@ -35,7 +35,7 @@ SELECT DISTINCT
 	genre,
 	duree,
 	realisateur,
-	date_sortie,
+	annee_sortie AS date_sortie,
 	note 
 FROM TMP_wiki2; 
 
