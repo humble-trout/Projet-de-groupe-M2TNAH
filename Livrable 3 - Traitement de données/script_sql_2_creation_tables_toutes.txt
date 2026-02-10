@@ -188,6 +188,16 @@ create table frequentation
 	entrees_2024 INTEGER,
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
+-- Remplissage de la table fréquentation 
+INSERT INTO frequentation 
+(evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
+SELECT DISTINCT 
+	evolution_entrees,
+	entree_21 AS entrees_2021, 
+	entree_22 AS entrees_2022, 
+	entree_23 AS entrees_2023,
+	entree_24 AS entrees_2024 
+FROM TMP_rsa_CNC ; 
 
 create table programmation_cinema
 --notes: table non jointe
