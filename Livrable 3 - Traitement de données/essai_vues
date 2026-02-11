@@ -1,28 +1,22 @@
 BEGIN;
 
---VUE_1 : nombre de cinéma indépendants en fonction du type de RSA dans une zone donnée (implique de connaitre aussi la taille du cinéma) pour créer une dataviz DOT MAP--
+--VUE_1 : nombre de cinéma indépendants en fonction du type de RSA dans une zone donnée pour créer une dataviz DOT MAP--
 --NOTE : croise les tables cinemas, aire_geographique --
---Type d'agrégation: round ?  --
-CREATE VIEW vw_dotmap_cinemas_rsa AS
-(
-SELECT DISTINCT
---caractéristiques du cinéma--
-    cinema.nom_cinema,
-    cinema.code_insee,
 
---caractéristiques de l'aire géographique--
-    aire_geographique.commune,
-    aire_geographique.code_departement,
-    
---partant de la table cinéma, qui est notre table centrale--
-    FROM cinema 
-   
---inserer round ??--
-    ) AS 
-FROM cinema
-INNER JOIN rsa ??
-    ON 
-WHERE cinema??
+CREATE VIEW vw_dotmap_cinema_rsa AS
+(
+SELECT 
+--table aire_geographique ag, attribut type_rsa--
+    ag.type_rsa,
+--compte le nombre de cinema, avec alias nb_cinema--
+    COUNT(c.id_cinema) AS nb_cinemas
+--partant de la table cinema, alias c--
+FROM cinema c
+JOIN aire_geographique ag 
+    ON c.id_aire_geographique = ag.id_aire_geographique
+
+--rassemble les résultats par aire géographique à propos du type de rsa--
+GROUP BY ag.type_rsa
 );
 
 ---
