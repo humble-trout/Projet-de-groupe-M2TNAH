@@ -37,10 +37,24 @@ SELECT DISTINCT
 FROM TMP_wiki2
 where titre is not null;
 
+--Création de la table aire_geographique 
 
+create table aire_geographique
+--notes:  je préfère supprimer les accents des noms des tables. table jointe
+(
+	id_aire_geographique INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	commune VARCHAR NOT NULL,
+	type_rsa VARCHAR,
+	nb_foyers INTEGER,
+	nb_personnes INTEGER,
+	region INTEGER NOT NULL,
+	--intérêt de region et nom_region séparés?
+	nom_region VARCHAR NOT NULL,
+	nom_departement VARCHAR NOT NULL,
+	code_departement INTEGER NOT NULL
+);
 
-
-insert into aire_geographique
+insert into aire_geographique (à réessayer, je crois que ça marche) => Voir s'il y a besoin de faire une table intermédiaire ou pas 
 (commune, region, code_insee, code_departement, type_rsa,
 nb_foyers, nb_personnes)
 select distinct 
