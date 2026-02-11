@@ -1,0 +1,34 @@
+
+
+
+
+
+
+
+
+
+
+
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	annee_sortie AS date_sortie,
+	note_sur_100
+FROM TMP_wiki1 
+where titre is not null
+
+UNION
+
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	annee_sortie AS date_sortie,
+	note_sur_100
+FROM TMP_wiki2
+where titre is not null;
