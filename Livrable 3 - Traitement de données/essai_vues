@@ -63,4 +63,112 @@ FROM frequentation
 
 --VUE_3 : propose de voir l'origine des films VO/VF pour aboutir à une dataviz en DIAGRAM RADAR--
 
+
+CREATE VIEW VUE_3_origine_films_vo_vf AS
+
+--concernant les films en VO--
+(
+SELECT 
+--VO ou VF--
+    seance.version AS version,    
+--film français--        
+    'FR' AS origine,     
+--part de marché France--             
+    SUM(programme_cinemas.pdm_fr) AS valeur           
+FROM seance 
+JOIN programmation_cinema pc 
+    ON seance.id_cine = programmation_cinema.id_cinema
+WHERE seance.version = 'VO'
+GROUP BY seance.version
+
+UNION ALL
+
+SELECT 
+--film américain--
+    seance.version,
+    'US' AS origine,
+    SUM(programmation_ciema.pdm_us)
+FROM seance 
+JOIN programmation_cinema 
+    ON seance.id_cine = programmaton_cinema.id_cinema
+WHERE seance.version = 'VO'
+GROUP BY seance.version
+
+UNION ALL
+
+SELECT 
+--film européen--
+    seance.version,
+    'UE' AS origine,
+    SUM(programmation_cinema.pdm_ue)
+FROM seance 
+JOIN programmation_cinema 
+    ON seance.id_cine = programmtion_cinema.id_cinema
+WHERE seance.version = 'VO'
+GROUP BY seance.version
+
+UNION ALL
+
+SELECT 
+--film d’autre origine--
+    seance.version,
+    'AUTRES' AS origine,
+    SUM(programmtion_cinema.pdm_autresfilms)
+FROM seance 
+JOIN programmation_cinema 
+    ON seance.id_cine = programmtion_cinema.id_cinema
+WHERE seance.version = 'VO'
+GROUP BY seance.version
+
+--pour les films en VF--
+
+UNION ALL
+
+SELECT 
+    seance.version,
+    'FR' AS origine,
+    SUM(programmation_cinema.pdm_fr)
+FROM seance 
+JOIN programmation_cinema 
+    ON seance.id_cine = programmtion_cinema.id_cinema
+WHERE seance.version = 'VF'
+GROUP BY seance.version
+
+UNION ALL
+
+SELECT 
+    s.version,
+    'US' AS origine,
+    SUM(pc.pdm_us)
+FROM seance 
+JOIN programmation_cinema 
+    ON seance.id_cine = programmation_cinema.id_cinema
+WHERE seance.version = 'VF'
+GROUP BY seance.version
+
+UNION ALL
+
+SELECT 
+    seance.version,
+    'UE' AS origine,
+    SUM(programmation_cinema.pdm_ue)
+FROM seance 
+JOIN programmation_cinema 
+    ON seance.id_cine = programmation_cinema.id_cinema
+WHERE seance.version = 'VF'
+GROUP BY seance.version
+
+UNION ALL
+
+SELECT 
+    seance.version,
+    'AUTRES' AS origine,
+    SUM(programmation_cinema.pdm_autresfilms)
+FROM seance 
+JOIN programmation_cinema 
+    ON seance.id_cine = programmation_cinema.id_cinema
+WHERE seance.version = 'VF'
+GROUP BY seance.version
+);
+
 COMMIT;
