@@ -54,7 +54,7 @@ create table aire_geographique
 	code_departement INTEGER NOT NULL
 );
 
-insert into aire_geographique (à réessayer, je crois que ça marche) => Voir s'il y a besoin de faire une table intermédiaire ou pas 
+insert into aire_geographique (à réessayer, je crois que ça marche) => Voir s'il y a besoin de faire une table intermédiaire ou pas : METTRE LES TRUCS DANS L'ORDRE
 (commune, region, code_insee, code_departement, type_rsa,
 nb_foyers, nb_personnes)
 select distinct 
