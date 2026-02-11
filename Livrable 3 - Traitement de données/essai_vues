@@ -23,40 +23,43 @@ GROUP BY ag.type_rsa
 
 --VUE_2 : évolution de la fréquentation des cinémas indépendants entre 2021 et 2024 pour créer une dataviz LINE CHART--
 --NOTE : croise les tables cinemas, frequentation--
---Type d'agrégation: sum ?  --
-CREATE VIEW vw_evolution_frequentation AS
+CREATE VIEW vw_evolution_frequentation_2021_2024 AS
+
+-- Année 2021--
+-- On sélectionne 2021 comme valeur fixe pour la colonne "annee"--
+-- et on additionne toutes les entrées 2021--
 (
-SELECT
-    annee,
-    SUM(entrees) AS total_entrees
-FROM (
-    SELECT 2021 AS annee, entree_2021 AS entrees
-    FROM cinema
-    WHERE ??
-    UNION ALL
+SELECT 
+    2021 AS annee,                     -- Colonne année--
+    SUM(entree2021) AS total_entrees   -- Total des entrées pour 2021--
+FROM frequentation
 
-    SELECT 2022 AS annee, entree_2022
-    FROM cinemas
-    WHERE ??
+UNION ALL
 
-    UNION ALL
+-- Année 2022--
+SELECT 
+    2022 AS annee,                     
+    SUM(entree2022) AS total_entrees
+FROM frequentation
 
-    SELECT 2023 AS annee, entree_2023
-    FROM cinemas
-    WHERE ??
+UNION ALL
 
-    UNION ALL
+-- Année 2023--
+SELECT 
+    2023 AS annee,                     
+    SUM(entree2023) AS total_entrees
+FROM frequentation
 
-    SELECT 2024 AS annee, entree_2024
-    FROM cinemas
-    WHERE ??
-) 
-GROUP BY annee
-ORDER BY annee
+UNION ALL
+
+-- Année 2024--
+SELECT 
+    2024 AS annee,                     
+    SUM(entree2024) AS total_entrees
+FROM frequentation
 );
 
-
-
+---
 
 --VUE_3 : propose de voir l'origine des films VO/VF pour aboutir à une dataviz en DIAGRAM RADAR--
 
