@@ -9,16 +9,11 @@ SELECT DISTINCT
 --caractéristiques du cinéma--
     cinema.nom_cinema,
     cinema.code_insee,
-    cinema.lattitude,
-    cinema.longitude,
-    cinema.fauteuils,
-    cinema.ecrans,
 
 --caractéristiques de l'aire géographique--
-    aire_geographique.nb_pers,
-    aire_geographique.nb_foyer,
     aire_geographique.commune,
-
+    aire_geographique.code_departement,
+    
 --partant de la table cinéma, qui est notre table centrale--
     FROM cinema 
    
