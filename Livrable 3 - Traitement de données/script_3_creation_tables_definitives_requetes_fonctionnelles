@@ -37,7 +37,7 @@ SELECT DISTINCT
 FROM TMP_wiki2
 where titre is not null;
 
---Création de la table aire_geographique 
+--Création de la table aire_geographique (PAS ENCORE FAIT !! À FAIRE) 
 
 create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
