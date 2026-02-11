@@ -144,13 +144,14 @@ create table frequentation
 );
 -- Remplissage de la table fréquentation 
 INSERT INTO frequentation 
-(evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
-SELECT DISTINCT 
+(id_cinema, evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
+SELECT DISTINCT
+    id_cinema,
 	evolution_entrees,
-	entree_21 AS entrees_2021, 
-	entree_22 AS entrees_2022, 
-	entree_23 AS entrees_2023,
-	entree_24 AS entrees_2024 
+	entrees_2021 AS entrees_2021, 
+	entrees_2022 AS entrees_2022, 
+	entrees_2023 AS entrees_2023,
+	entrees_2024 AS entrees_2024 
 FROM TMP_rsa_CNC ; 
 
 create table programmation_cinema
