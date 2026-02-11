@@ -5,17 +5,23 @@ BEGIN;
 --Type d'agrégation: round ?  --
 CREATE VIEW vw_dotmap_cinemas_rsa AS
 (
-SELECT
+SELECT DISTINCT
+--caractéristiques du cinéma--
     cinema.nom_cinema,
-    commune,
     cinema.code_insee,
-    cinema.latitude,
+    cinema.lattitude,
     cinema.longitude,
     cinema.fauteuils,
     cinema.ecrans,
+
+--caractéristiques de l'aire géographique--
     aire_geographique.nb_pers,
-    aire_geographique..nb_foyer,
-    cinema.population_commune,
+    aire_geographique.nb_foyer,
+    aire_geographique.commune,
+
+--partant de la table cinéma, qui est notre table centrale--
+    FROM cinema 
+   
 --inserer round ??--
     ) AS 
 FROM cinema
