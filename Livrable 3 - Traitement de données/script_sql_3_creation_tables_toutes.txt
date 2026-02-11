@@ -2,6 +2,42 @@ BEGIN ;
 
 SET search_path TO psch;
 
+create table film
+--notes: besoin de rajouter des accents car ils ne sont pas acceptés dans les noms des attributs. table jointe
+(
+	id_film INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	titre VARCHAR NOT NULL,
+	genre VARCHAR,
+	duree INTEGER,
+	realisateur VARCHAR,
+	date_sortie VARCHAR,
+	note INTEGER
+);
+
+-- remplissage de la table film 
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	annee_sortie AS date_sortie,
+	note 
+FROM TMP_wiki1 
+
+UNION
+
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	annee_sortie AS date_sortie,
+	note 
+FROM TMP_wiki2; 
 
 create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
@@ -151,4 +187,3 @@ FROM TMP_rsa_CNC ;
 
 -- Fin du script
 COMMIT ;
-
