@@ -1,0 +1,189 @@
+BEGIN ;
+
+SET search_path TO psch;
+
+create table film
+--notes: besoin de rajouter des accents car ils ne sont pas acceptés dans les noms des attributs. table jointe
+(
+	id_film INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	titre VARCHAR NOT NULL,
+	genre VARCHAR,
+	duree INTEGER,
+	realisateur VARCHAR,
+	date_sortie VARCHAR,
+	note INTEGER
+);
+
+-- remplissage de la table film 
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	annee_sortie AS date_sortie,
+	note 
+FROM TMP_wiki1 
+
+UNION
+
+INSERT INTO film 
+(titre, genre, duree, realisateur, date_sortie, note)
+SELECT DISTINCT 
+	titre,
+	genre,
+	duree,
+	realisateur,
+	annee_sortie AS date_sortie,
+	note 
+FROM TMP_wiki2; 
+
+create table aire_geographique
+--notes:  je préfère supprimer les accents des noms des tables. table jointe
+(
+	id_aire_geographique INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	commune VARCHAR NOT NULL,
+	type_rsa VARCHAR,
+	nb_foyers INTEGER,
+	nb_personnes INTEGER,
+	region INTEGER NOT NULL,
+	--intérêt de region et nom_region séparés?
+	nom_region VARCHAR NOT NULL,
+	nom_departement VARCHAR NOT NULL,
+	code_departement INTEGER NOT NULL
+);
+
+-- Remplissage de la table aire_geographique
+INSERT INTO aire_geographique 
+(commune, type_rsa, nb_foyers, nb_personnes, region, nom_departement, code_departement)
+SELECT DISTINCT 
+	commune, 
+	type_rsa, 
+	nbr_foyer_rsa AS nb_foyers,
+	nbr_pers_rsa AS nb_personnes, 
+	region_cnc AS region, 
+	departement AS nom_departement, 
+	code_insee AS code_departement
+FROM TMP_rsa_CNC; 
+
+create table utilisateur
+(
+	id_utilisateur INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+	--à remplir
+);
+
+
+create table cinema
+--notes: table jointe
+(
+	id_cinema INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	id_aire_geographique INTEGER NOT NULL,
+	nom_cinema VARCHAR NOT NULL,
+	adresse VARCHAR,
+	longitude REAL,
+	latitude REAL,
+	numero_uu INTEGER,
+	ecrans INTEGER,
+	fauteuils INTEGER,
+	capacite_totale INTEGER,
+	FOREIGN KEY (id_aire_geographique) REFERENCES aire_geographique(id_aire_geographique)
+);
+
+--remplissage de la table "cinema"
+
+INSERT INTO cinema
+(nom_cinema, adresse, longitude, latitude, numero_uu, ecrans, fauteuils, capacite_totale)
+SELECT DISTINCT 
+	nom_cinema, 
+	adresse, 
+	longitude,
+	latitude,
+	n_uu AS numero_uu, 
+	ecrans,
+	fauteuils,
+	capacite_totale
+FROM TMP_rsa_CNC ; 
+
+create table seance
+--notes: table jointe (?)
+(
+	id_seance INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	id_film INTEGER NOT NULL,
+	id_cinema INTEGER NOT NULL,
+	debut DATE,
+	fin DATE,
+	sous_titres BOOLEAN,
+	version VARCHAR,
+	nb_places INTEGER,
+	FOREIGN KEY (id_film) REFERENCES film(id_film),
+	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
+);
+
+INSERT INTO seance
+(debut, fin, ST, version, nb_places)
+SELECT DISTINCT 
+	debut_seance AS debut, 
+	fin_seance AS fin, 
+	sous_titres AS ST, 
+	version_audio AS version, 
+	nbr_place AS nb_places
+FROM TMP_programmation ; 
+
+create table frequentation
+--notes: FOREIGN KEY ne fonctionne pas tant que cinema n'est pas créé mais cinema a besoin de frequentation pour être créé: problème. table jointe
+(
+	--id_frequentation INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	id_cinema INTEGER NOT NULL,
+	evolution_entrees INTEGER,
+	entrees_2021 INTEGER,
+	entrees_2022 INTEGER,
+	entrees_2023 INTEGER,
+	entrees_2024 INTEGER,
+	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
+);
+-- Remplissage de la table fréquentation 
+INSERT INTO frequentation 
+(evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
+SELECT DISTINCT 
+	evolution_entrees,
+	entree_21 AS entrees_2021, 
+	entree_22 AS entrees_2022, 
+	entree_23 AS entrees_2023,
+	entree_24 AS entrees_2024 
+FROM TMP_rsa_CNC ; 
+
+create table programmation_cinema
+--notes: table non jointe
+(
+	--id_programmation INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	id_cinema INTEGER NOT NULL,
+	seances_annuelles INTEGER,
+	art_et_essai BOOL,
+	nb_films_inedits INTEGER,
+	nb_films_programmes INTEGER,
+	pdm_fr INTEGER,
+	pdm_us INTEGER,
+	pdm_ue INTEGER,
+	pdm_autres_films INTEGER,
+	pdm_art_et_essai INTEGER,
+	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
+);
+
+--remplissage de la table programmation_cinema
+INSERT INTO programmation_cinema
+(art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
+SELECT DISTINCT 
+	art_et_essai, 
+	nb_films_inedits,
+	nb_films_programmes,
+	pdm_films_francais AS pdm_fr,
+	pdm_films_americains AS pdm_us,
+	pdm_films_europeens AS pdm_ue,
+	pdm_autres_films AS pdm_autres_films,
+	pdm_films_ae AS pdm_art_et_essai
+FROM TMP_rsa_CNC ;
+
+
+-- Fin du script
+COMMIT ;
