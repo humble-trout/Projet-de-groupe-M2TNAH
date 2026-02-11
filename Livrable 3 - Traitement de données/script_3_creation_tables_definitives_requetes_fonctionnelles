@@ -36,3 +36,20 @@ SELECT DISTINCT
 	note_sur_100
 FROM TMP_wiki2
 where titre is not null;
+
+
+
+
+insert into aire_geographique
+(commune, region, code_insee, code_departement, type_rsa,
+nb_foyers, nb_personnes)
+select distinct 
+	a.commune, 
+	a.region_cnc as region,
+	a.code_insee, 
+	a.departement as code_departement, 
+	b.type_rsa,
+	b.nbr_foyer_rsa as nb_foyers, 
+	b.nbr_pers_rsa as nb_personnes
+from tmp_cnc a
+left join tmp_rsa b on a.commune = b.commune; 
