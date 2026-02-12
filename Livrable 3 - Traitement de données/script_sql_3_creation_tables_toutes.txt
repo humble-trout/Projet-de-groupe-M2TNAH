@@ -75,7 +75,6 @@ create table utilisateur
 
 
 create table cinema
---notes: table jointe
 (
 	id_cinema INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_aire_geographique INTEGER NOT NULL,
