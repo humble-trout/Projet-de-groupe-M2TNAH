@@ -70,3 +70,9 @@ left join tmp_rsa b on a.commune = b.commune;
 
 --Création de la table utilisateur
 
+create table utilisateur
+(
+	id_utilisateur INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+);
+
+
