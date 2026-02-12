@@ -168,7 +168,7 @@ on tc.adresse = tec.adresse;
 create table programmation_cinema
 --notes: table non jointe
 (
-	id_cinema INTEGER NOT NULL,
+	id_cinema INTEGER,
 	seances_annuelles INTEGER,
 	art_et_essai BOOL,
 	nb_films_inedits INTEGER,
