@@ -24,7 +24,7 @@ SET id_cinema = g.id_cinema
 FROM cinema g
 WHERE a.nom_cinema = g.nom_cinema  ;
 
---UPDATE pour la table fréquentation, permettant de rajouter une clé secondaire id_cinéma
+--UPDATE pour la table fréquentation, permettant de rajouter une clé secondaire id_cinéma (FAIRE LE MÊME UPDATE QUE POUR LA TABLE PROGRAMMATION)
 
 --update pour les ids
 UPDATE frequentation L
