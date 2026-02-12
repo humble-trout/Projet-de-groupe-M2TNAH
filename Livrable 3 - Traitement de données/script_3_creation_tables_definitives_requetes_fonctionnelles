@@ -140,7 +140,6 @@ FROM TMP_programation ;
 create table frequentation
 --notes: FOREIGN KEY ne fonctionne pas tant que cinema n'est pas créé mais cinema a besoin de frequentation pour être créé: problème. table jointe
 (
-	--id_frequentation INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_cinema INTEGER,
 	nom_cinema VARCHAR,
 	evolution_entrees INTEGER,
