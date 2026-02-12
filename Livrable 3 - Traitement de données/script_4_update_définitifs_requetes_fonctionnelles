@@ -4,3 +4,11 @@ UPDATE cinema c
 SET id_aire_geographique = ag.id_aire_geographique
 FROM aire_geographique ag
 WHERE c.commune = ag.commune ;
+
+--UPDATE dans la table seance pour y inclure un id_film 
+
+UPDATE seance s 
+SET id_film = film.id_film 
+FROM film f
+INNER JOIN tmp_programation tp
+WHERE film.titre like tmp_programation.titre; 
