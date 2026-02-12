@@ -96,7 +96,7 @@ create table cinema
 --remplissage de la table "cinema"
 
 INSERT INTO cinema
-(nom_cinema, adresse, commune, longitude, latitude, numero_uu, ecrans, fauteuils, capacite_totale)
+(nom_cinema, adresse, commune, longitude, latitude, numero_uu, ecrans, fauteuils)
 SELECT DISTINCT 
 	nom_cinema, 
 	adresse, 
@@ -105,7 +105,6 @@ SELECT DISTINCT
 	latitude,
 	n_uu AS numero_uu, 
 	ecrans,
-	fauteuils,
-	capacite_totale
+	fauteuils
 FROM tmp_cnc ; 
 
