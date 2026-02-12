@@ -117,7 +117,7 @@ create table seance
 	id_cinema INTEGER,
 	debut DATE,
 	fin DATE,
-	sous_titres BOOLEAN,
+	ST BOOLEAN,
 	version VARCHAR,
 	nb_places INTEGER,
 	FOREIGN KEY (id_film) REFERENCES film(id_film),
