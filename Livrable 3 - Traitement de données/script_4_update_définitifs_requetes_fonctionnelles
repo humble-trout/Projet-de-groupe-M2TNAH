@@ -1,4 +1,6 @@
-update cinema 
-set id_aire_geographique = ag.id_aire_geographique 
-from aire_geographique ag 
-inner join cinema c on ag.commune = c.commune ; 
+--UPDATE dans la table cinema pour y inclure un id_aire_geographique
+
+UPDATE cinema c
+SET id_aire_geographique = ag.id_aire_geographique
+FROM aire_geographique ag
+WHERE c.commune = ag.commune ;
