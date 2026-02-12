@@ -141,7 +141,7 @@ create table frequentation
 --notes: FOREIGN KEY ne fonctionne pas tant que cinema n'est pas créé mais cinema a besoin de frequentation pour être créé: problème. table jointe
 (
 	--id_frequentation INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
-	id_cinema INTEGER NOT NULL,
+	id_cinema INTEGER,
 	evolution_entrees INTEGER,
 	entrees_2021 INTEGER,
 	entrees_2022 INTEGER,
