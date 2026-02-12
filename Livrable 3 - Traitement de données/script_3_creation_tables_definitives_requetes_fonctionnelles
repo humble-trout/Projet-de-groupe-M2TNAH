@@ -75,4 +75,20 @@ create table utilisateur
 	id_utilisateur INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY
 );
 
+À VOIR APRÈS AVEC BÉATRICE !! 
+
+--Création de la table cinema 
+create table cinema
+(
+	id_cinema INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	id_aire_geographique INTEGER,
+	nom_cinema VARCHAR NOT NULL,
+	adresse VARCHAR,
+	longitude REAL,
+	latitude REAL,
+	numero_uu VARCHAR,
+	ecrans INTEGER,
+	fauteuils INTEGER,
+	FOREIGN KEY (id_aire_geographique) REFERENCES aire_geographique(id_aire_geographique)
+);
 
