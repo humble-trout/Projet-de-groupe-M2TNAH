@@ -67,3 +67,6 @@ select distinct
 	b.nbr_pers_rsa as nb_personnes
 from tmp_cnc a
 left join tmp_rsa b on a.commune = b.commune;
+
+--Création de la table utilisateur
+
