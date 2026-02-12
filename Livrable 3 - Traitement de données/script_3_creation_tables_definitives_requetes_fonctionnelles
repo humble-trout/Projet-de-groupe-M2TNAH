@@ -142,6 +142,7 @@ create table frequentation
 (
 	--id_frequentation INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_cinema INTEGER,
+	nom_cinema VARCHAR,
 	evolution_entrees INTEGER,
 	entrees_2021 INTEGER,
 	entrees_2022 INTEGER,
@@ -152,8 +153,9 @@ create table frequentation
 
 -- Remplissage de la table fréquentation 
 INSERT INTO frequentation 
-(evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
+(nom_cinema, evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
 SELECT DISTINCT 
+	tec.nom_cinema,
 	tec.evolution_entrees,
 	tec.entree_21 AS entrees_2021, 
 	tec.entree_22 AS entrees_2022, 
