@@ -7,8 +7,8 @@ WHERE c.commune = ag.commune ;
 
 --UPDATE dans la table seance pour y inclure un id_film 
 
-UPDATE seance s 
-SET id_film = film.id_film 
+UPDATE seance s
+SET id_film = f.id_film 
 FROM film f
 INNER JOIN tmp_programation tp
 ON f.titre like tp.titre
