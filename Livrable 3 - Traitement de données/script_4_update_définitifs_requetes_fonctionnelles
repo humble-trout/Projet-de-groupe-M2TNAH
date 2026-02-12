@@ -8,18 +8,18 @@ WHERE c.commune = ag.commune ;
 
 --UPDATE pour la table séance, permettant de rajouter les clés secondaires id_film et id_cinéma
 
-UPDATE seance1 a
+UPDATE seance a
 SET id_film = n.id_film 
 FROM film1 n
 WHERE a.titre ilike n.titre  ;
 
-UPDATE seance1 a
+UPDATE seance a
 SET id_film = z.id_film 
 FROM film z
 WHERE a.titre ilike z.titre  ;
 
 --update pour la clé id_cinema - fonctione !!
-UPDATE seance1 a
+UPDATE seance a
 SET id_cinema = g.id_cinema 
 FROM cinema g
 WHERE a.nom_cinema = g.nom_cinema  ;
