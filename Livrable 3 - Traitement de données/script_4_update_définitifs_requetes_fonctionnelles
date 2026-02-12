@@ -5,7 +5,8 @@ SET id_aire_geographique = ag.id_aire_geographique
 FROM aire_geographique ag
 WHERE c.commune = ag.commune ;
 
---UPDATE dans la table seance pour y inclure un id_film 
+--UPDATE dans la table seance pour y inclure un id_film (à modifier, requête ci-dessous faite par IA pour voir,
+mais pas forcément ouf)
 
 UPDATE seance s
 SET id_film = f.id_film 
