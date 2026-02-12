@@ -107,5 +107,5 @@ SELECT DISTINCT
 	ecrans,
 	fauteuils,
 	capacite_totale
-FROM TMP_rsa_CNC ; 
+FROM tmp_cnc ; 
 
