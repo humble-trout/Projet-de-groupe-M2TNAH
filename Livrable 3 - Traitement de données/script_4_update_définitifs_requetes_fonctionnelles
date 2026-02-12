@@ -11,4 +11,6 @@ UPDATE seance s
 SET id_film = film.id_film 
 FROM film f
 INNER JOIN tmp_programation tp
-WHERE film.titre like tmp_programation.titre; 
+ON f.titre like tp.titre
+WHERE s.debut = tp.debut_seance
+AND s.fin = tp.fin_seance; 
