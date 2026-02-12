@@ -135,3 +135,24 @@ SELECT DISTINCT
 	nbr_place AS nb_places
 FROM TMP_programation ; 
 
+-- Creation table fréquentation 
+
+
+
+
+
+-- Remplissage de la table fréquentation 
+INSERT INTO frequentation 
+(evolution_entrees, entrees_2021, entrees_2022, entrees_2023, entrees_2024)
+SELECT DISTINCT 
+	tec.evolution_entrees,
+	tec.entree_21 AS entrees_2021, 
+	tec.entree_22 AS entrees_2022, 
+	tc.entree_23 AS entrees_2023,
+	tc.entree_24 AS entrees_2024 
+FROM tmp_cnc tc 
+full join tmp_etab_cine tec
+on tc.adresse = tec.adresse;
+
+
+
