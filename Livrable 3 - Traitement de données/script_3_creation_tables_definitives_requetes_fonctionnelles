@@ -37,7 +37,7 @@ SELECT DISTINCT
 FROM TMP_wiki2
 where titre is not null;
 
---Création de la table aire_geographique (PAS ENCORE FAIT !! À FAIRE) 
+--Création de la table aire_geographique 
 
 create table aire_geographique
 (
@@ -52,6 +52,7 @@ create table aire_geographique
 	nb_personnes INTEGER
 );
 
+--Remplissage de la table aire_geographique
 insert into aire_geographique 
 (commune, region, nom_region, code_insee, code_departement, type_rsa,
 nb_foyers, nb_personnes)
