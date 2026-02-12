@@ -23,3 +23,17 @@ UPDATE seance1 a
 SET id_cinema = g.id_cinema 
 FROM cinema g
 WHERE a.nom_cinema = g.nom_cinema  ;
+
+--UPDATE pour la table fréquentation, permettant de rajouter une clé secondaire id_cinéma
+
+--update pour les ids
+UPDATE frequentation L
+SET id_cinema = g.id_cinema 
+FROM cinema g
+WHERE L.adresse_cinema = g.adresse  ;
+
+--update pour les ids
+UPDATE frequentation L
+SET id_cinema = g.id_cinema 
+FROM cinema g
+WHERE L.nom_cinema = g.nom_cinema  ;
