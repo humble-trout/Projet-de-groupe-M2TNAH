@@ -108,6 +108,7 @@ SELECT DISTINCT
 	fauteuils
 FROM tmp_cnc ; 
 
+--Création de la table seance
 create table seance
 
 (
@@ -123,4 +124,14 @@ create table seance
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
 
+--Remplissage de la table seance
+INSERT INTO seance
+(debut, fin, ST, version, nb_places)
+SELECT DISTINCT 
+	debut_seance AS debut, 
+	fin_seance AS fin, 
+	sous_titres AS ST, 
+	version_audio AS version, 
+	nbr_place AS nb_places
+FROM TMP_programation ; 
 
