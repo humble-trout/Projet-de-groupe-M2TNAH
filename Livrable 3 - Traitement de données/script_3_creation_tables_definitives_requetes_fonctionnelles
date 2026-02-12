@@ -164,11 +164,12 @@ FROM tmp_cnc tc
 full join tmp_etab_cine tec
 on tc.adresse = tec.adresse;
 
-
+--Création de la table programmation_cinema
 create table programmation_cinema
---notes: table non jointe
+
 (
-	id_cinema INTEGER,
+	id_cinema INTEGER, 
+	nom_cinema VARCHAR, 
 	seances_annuelles INTEGER,
 	art_et_essai BOOL,
 	nb_films_inedits INTEGER,
@@ -184,8 +185,9 @@ create table programmation_cinema
 
 --remplissage de la table programmation_cinema
 INSERT INTO programmation_cinema
-(seances_annuelles, art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
+(nom_cinema, seances_annuelles, art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
 SELECT DISTINCT 
+	nom_cinema,
 	seances_annuelles,
 	art_et_essai, 
 	nb_films_inedits,
