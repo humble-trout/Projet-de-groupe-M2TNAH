@@ -83,7 +83,7 @@ create table cinema
 	adresse VARCHAR,
 	longitude REAL,
 	latitude REAL,
-	numero_uu INTEGER,
+	numero_uu VARCHAR,
 	ecrans INTEGER,
 	fauteuils INTEGER,
 	capacite_totale INTEGER,
