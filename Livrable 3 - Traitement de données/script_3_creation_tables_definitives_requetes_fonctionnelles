@@ -43,10 +43,10 @@ create table aire_geographique
 (
 	id_aire_geographique INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	commune VARCHAR NOT NULL,
-	region INTEGER NOT NULL,
-	nom_region VARCHAR, 
-	code_insee VARCHAR NOT NULL,    
+	code_insee VARCHAR NOT NULL,  
 	code_departement VARCHAR NOT NULL,
+	region INTEGER NOT NULL,
+	nom_region VARCHAR,   
 	type_rsa VARCHAR,
 	nb_foyers INTEGER,
 	nb_personnes INTEGER
@@ -54,14 +54,14 @@ create table aire_geographique
 
 --Remplissage de la table aire_geographique
 insert into aire_geographique 
-(commune, region, nom_region, code_insee, code_departement, type_rsa,
+(commune, code_insee, code_departement, region, nom_region, type_rsa,
 nb_foyers, nb_personnes)
 select distinct 
 	a.commune, 
-	a.region_cnc as region,
-	a.region_administrative as nom_region,
 	a.code_insee, 
 	a.departement as code_departement, 
+	a.region_cnc as region,
+	a.region_administrative as nom_region,
 	b.type_rsa,
 	b.nbr_foyer_rsa as nb_foyers, 
 	b.nbr_pers_rsa as nb_personnes
