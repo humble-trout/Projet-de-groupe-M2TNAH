@@ -40,30 +40,29 @@ where titre is not null;
 --Création de la table aire_geographique (PAS ENCORE FAIT !! À FAIRE) 
 
 create table aire_geographique
-
 (
 	id_aire_geographique INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	commune VARCHAR NOT NULL,
+	region INTEGER NOT NULL,
+	nom_region VARCHAR, 
+	code_insee VARCHAR NOT NULL,    
+	code_departement VARCHAR NOT NULL,
 	type_rsa VARCHAR,
 	nb_foyers INTEGER,
-	nb_personnes INTEGER,
-	region INTEGER NOT NULL,
-	--intérêt de region et nom_region séparés?
-	nom_region VARCHAR NOT NULL,
-	nom_departement VARCHAR NOT NULL,
-	code_departement INTEGER NOT NULL
+	nb_personnes INTEGER
 );
 
-insert into aire_geographique (à réessayer, je crois que ça marche) => Voir s'il y a besoin de faire une table intermédiaire ou pas : METTRE LES TRUCS DANS L'ORDRE
-(commune, code_insee, code_departement, type_rsa,
+insert into aire_geographique 
+(commune, region, nom_region, code_insee, code_departement, type_rsa,
 nb_foyers, nb_personnes)
 select distinct 
 	a.commune, 
 	a.region_cnc as region,
+	a.region_administrative as nom_region,
 	a.code_insee, 
 	a.departement as code_departement, 
 	b.type_rsa,
 	b.nbr_foyer_rsa as nb_foyers, 
 	b.nbr_pers_rsa as nb_personnes
 from tmp_cnc a
-left join tmp_rsa b on a.commune = b.commune; 
+left join tmp_rsa b on a.commune = b.commune;
