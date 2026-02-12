@@ -108,3 +108,19 @@ SELECT DISTINCT
 	fauteuils
 FROM tmp_cnc ; 
 
+create table seance
+
+(
+	id_seance INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
+	id_film INTEGER,
+	id_cinema INTEGER,
+	debut DATE,
+	fin DATE,
+	sous_titres BOOLEAN,
+	version VARCHAR,
+	nb_places INTEGER,
+	FOREIGN KEY (id_film) REFERENCES film(id_film),
+	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
+);
+
+
