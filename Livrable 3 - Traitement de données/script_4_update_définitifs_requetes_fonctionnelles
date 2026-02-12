@@ -5,27 +5,21 @@ SET id_aire_geographique = ag.id_aire_geographique
 FROM aire_geographique ag
 WHERE c.commune = ag.commune ;
 
---UPDATE dans la table seance pour y inclure un id_film (à modifier, requête ci-dessous faite par IA pour voir,
-mais pas forcément ouf)
 
-UPDATE seance s
-SET id_film = f.id_film 
-FROM film f
-INNER JOIN tmp_programation tp
-ON f.titre like tp.titre
-WHERE s.debut = tp.debut_seance
-AND s.fin = tp.fin_seance; 
+--UPDATE pour la table séance, permettant de rajouter les clés secondaires id_film et id_cinéma
 
+UPDATE seance1 a
+SET id_film = n.id_film 
+FROM film1 n
+WHERE a.titre ilike n.titre  ;
 
-
---update pour la table séance, pour ajouter la clé id_film. Note: besoin de faire une jointure supplémentaire pour film parce que beaucoup des films ne sont pas dans le jeu de données wikidata
-UPDATE seance s
+UPDATE seance1 a
 SET id_film = z.id_film 
 FROM film z
-WHERE s.titre ilike z.titre  ;
+WHERE a.titre ilike z.titre  ;
 
---update pour la table séance, pour ajouter la clé id_cinema - fonctione !!
-UPDATE seance s
+--update pour la clé id_cinema - fonctione !!
+UPDATE seance1 a
 SET id_cinema = g.id_cinema 
 FROM cinema g
-WHERE s.nom_cinema = g.nom_cinema  ;
+WHERE a.nom_cinema = g.nom_cinema  ;
