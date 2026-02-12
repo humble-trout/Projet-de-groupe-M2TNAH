@@ -1,1 +1,4 @@
-
+update cinema 
+set id_aire_geographique = ag.id_aire_geographique 
+from aire_geographique ag 
+inner join cinema c on ag.commune = c.commune ; 
