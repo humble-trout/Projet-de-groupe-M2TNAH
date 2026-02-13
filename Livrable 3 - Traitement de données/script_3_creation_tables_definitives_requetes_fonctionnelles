@@ -81,8 +81,6 @@ create table utilisateur
 	id_utilisateur INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY
 );
 
-À VOIR APRÈS AVEC BÉATRICE !! 
-
 --Création de la table cinema 
 create table cinema
 (
@@ -114,13 +112,15 @@ SELECT DISTINCT
 	fauteuils
 FROM tmp_cnc ; 
 
---Création de la table seance
-create table seance
+--Création de la table séance
 
+create table seance
 (
 	id_seance INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_film INTEGER,
 	id_cinema INTEGER,
+	titre varchar,
+	nom_cinema varchar,
 	debut DATE,
 	fin DATE,
 	ST BOOLEAN,
@@ -129,17 +129,18 @@ create table seance
 	FOREIGN KEY (id_film) REFERENCES film(id_film),
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
-
 --Remplissage de la table seance
 INSERT INTO seance
-(debut, fin, ST, version, nb_places)
-SELECT DISTINCT 
-	debut_seance AS debut, 
-	fin_seance AS fin, 
-	sous_titres AS ST, 
-	version_audio AS version, 
+(titre, nom_cinema, debut, fin, ST, version, nb_places)
+SELECT DISTINCT
+	titre,
+	nom_cinema,
+	debut_seance AS debut,
+	fin_seance AS fin,
+	sous_titres AS ST,
+	version_audio AS version,
 	nbr_place AS nb_places
-FROM TMP_programation ; 
+FROM TMP_programation ;
 
 -- Creation table fréquentation 
 
