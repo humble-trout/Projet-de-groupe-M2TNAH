@@ -13,27 +13,19 @@ group by titre, realisateur
 UNION
 SELECT
     titre,
-    realisateur--tentative de créer la table film en liant les multiples réalisateurs d'un film à une seule film_id. uniquement pour wikidata, à changer
-CREATE TABLE IF NOT EXISTS film_realisateurs (titre, realisateur)
-AS
-SELECT
-    titre,
-    realisateur
-from TMP_wiki1
-where titre is not null and realisateur !~ 'Q[^a-z]'
---évite de prendre les données où le nom du réalisateur est remplacé par une ID Wikidata
-group by titre, realisateur
-UNION
-SELECT
-    titre,
     realisateur
 FROM TMP_wiki2
 where titre is not null and realisateur !~ 'Q[^a-z]'
 group by titre, realisateur;
 
---ajoute et insère les ids de films à film_realisateurs. NE MARCHE PAS
+--ajoute et insère les ids de films à films_realisateurs. NE MARCHE PAQS
 ALTER TABLE film_realisateurs
 ADD id_film integer FOREIGN KEY REFERENCES film(id_film); 
+
+--certaines données de film_realisateurs continennent par erreur une ID wikidata au lieu du nom du réalisateur. supprime cette valeur de la table en la remplaçant par NULL
+UPDATE film_realisateurs
+SET realisateur = NULL
+WHERE realisateur ~ 'Q[^a-z]';
 
 
 --create table film sans realisateur
@@ -47,7 +39,7 @@ create table film
 	note INTEGER
 );
 
--- Remplissage de la table film sans realisateur. ATTENTION: a encore le réalisateur de la programmation
+-- Remplissage de la table film. contient encore les réalisateurs de programmation
 INSERT INTO film
 (titre, genre, duree, date_sortie, note)
 SELECT DISTINCT
@@ -101,6 +93,3 @@ DELETE FROM
 WHERE
     f.id_film > b.id_film
     AND f.titre = b.titre;
-FROM TMP_wiki2
-where titre is not null and realisateur !~ 'Q[^a-z]'
-group by titre, realisateur;
