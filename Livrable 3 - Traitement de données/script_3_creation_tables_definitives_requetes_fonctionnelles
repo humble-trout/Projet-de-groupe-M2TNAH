@@ -11,6 +11,7 @@ create table film
 	date_sortie VARCHAR,
 	note INTEGER
 );
+
 -- Remplissage de la table film
 INSERT INTO film
 (titre, genre, duree, realisateur, date_sortie, note)
