@@ -37,7 +37,33 @@ SELECT DISTINCT
 	realisateur,
 	annee_sortie AS date_sortie,
 	note 
-FROM TMP_wiki2; 
+FROM TMP_wiki2;
+
+--identifier les doublons dans la table film
+SELECT
+    titre,
+    COUNT( titre )
+FROM
+    film f 
+GROUP BY
+    titre
+HAVING
+    COUNT( titre )> 1
+ORDER BY
+    titre;
+
+--supprimer les doublons de la table film. je crée une jointure entre une version f et une version b de la même table film, qui permet ensuite de supprimer les doublons. je supprime les doublons dont l'ID est supérieure afin de garder le plus possible les données de Wikidata, qui sont plus complètes
+select *
+from film f 
+join film b
+on f.id_film = b.id_film;
+
+DELETE FROM
+    film f
+        USING film b
+WHERE
+    f.id_film > b.id_film
+    AND f.titre = b.titre;
 
 create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
