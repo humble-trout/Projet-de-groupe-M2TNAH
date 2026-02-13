@@ -1,7 +1,7 @@
+--Création de la table film
 
--- Creation de la table film 
 create table film
---notes: besoin de rajouter des accents car ils ne sont pas acceptés dans les noms des attributs. table jointe
+
 (
 	id_film INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	titre VARCHAR NOT NULL,
@@ -11,23 +11,20 @@ create table film
 	date_sortie VARCHAR,
 	note INTEGER
 );
-
--- Remplissage de la table film 
-INSERT INTO film 
+-- Remplissage de la table film
+INSERT INTO film
 (titre, genre, duree, realisateur, date_sortie, note)
-SELECT DISTINCT 
+SELECT DISTINCT
 	titre,
 	genre,
 	duree,
 	realisateur,
 	annee_sortie AS date_sortie,
 	note_sur_100
-FROM TMP_wiki1 
+FROM TMP_wiki1
 where titre is not null
-
 UNION
-
-SELECT DISTINCT 
+SELECT DISTINCT
 	titre,
 	genre,
 	duree,
@@ -36,6 +33,14 @@ SELECT DISTINCT
 	note_sur_100
 FROM TMP_wiki2
 where titre is not null;
+INSERT INTO film
+(titre, genre, realisateur)
+SELECT DISTINCT
+	titre,
+	genre,
+	realisateur
+FROM tmp_programation tp ;
+
 
 --Création de la table aire_geographique 
 
