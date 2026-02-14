@@ -40,16 +40,14 @@ WHERE L.nom_cinema = g.nom_cinema  ;
 
 
 --UPDATE équivalent pour la table programmation_cinema, permettant de rajouter une clé secondaire id_cinéma
-UPDATE progrmmation_cinema pc
+UPDATE programmation_cinema pc
 SET id_cinema = g.id_cinema 
 FROM cinema g
-WHERE .adresse_cinema = g.adresse  ;
+WHERE pc.adresse_cinema = g.adresse  ;
 
 --update pour les ids
-UPDATE frequentation L
+UPDATE programmation_cinema pc
 SET id_cinema = g.id_cinema 
 FROM cinema g
-WHERE L.nom_cinema = g.nom_cinema  ;
-
-
+WHERE pc.nom_cinema = g.nom_cinema  ;
 
