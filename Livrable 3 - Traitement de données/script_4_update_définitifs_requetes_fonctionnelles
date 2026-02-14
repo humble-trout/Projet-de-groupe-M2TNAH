@@ -1,3 +1,9 @@
+BEGIN;
+
+-- nom de schéma définitif
+SET search_path TO psch;
+
+
 --UPDATE dans la table cinema pour y inclure un id_aire_geographique
 
 UPDATE cinema c
@@ -51,3 +57,4 @@ SET id_cinema = g.id_cinema
 FROM cinema g
 WHERE pc.nom_cinema = g.nom_cinema  ;
 
+COMMIT ;
