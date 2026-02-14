@@ -24,7 +24,7 @@ SET id_cinema = g.id_cinema
 FROM cinema g
 WHERE a.nom_cinema = g.nom_cinema  ;
 
---UPDATE pour la table fréquentation, permettant de rajouter une clé secondaire id_cinéma (FAIRE LE MÊME UPDATE POUR LA TABLE PROGRAMMATION_CINEMA (je le fais tout à l'heure promis!))
+--UPDATE pour la table fréquentation, permettant de rajouter une clé secondaire id_cinéma 
 
 --update pour les ids
 UPDATE frequentation L
@@ -37,3 +37,19 @@ UPDATE frequentation L
 SET id_cinema = g.id_cinema 
 FROM cinema g
 WHERE L.nom_cinema = g.nom_cinema  ;
+
+
+--UPDATE équivalent pour la table programmation_cinema, permettant de rajouter une clé secondaire id_cinéma
+UPDATE progrmmation_cinema pc
+SET id_cinema = g.id_cinema 
+FROM cinema g
+WHERE .adresse_cinema = g.adresse  ;
+
+--update pour les ids
+UPDATE frequentation L
+SET id_cinema = g.id_cinema 
+FROM cinema g
+WHERE L.nom_cinema = g.nom_cinema  ;
+
+
+
