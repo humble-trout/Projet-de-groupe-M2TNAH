@@ -1,3 +1,8 @@
+BEGIN;
+
+-- nom de schéma définitif
+SET search_path TO psch;
+
 --Création de la table film
 
 create table film
@@ -210,3 +215,4 @@ SELECT DISTINCT
 	pdm_films_ae AS pdm_art_et_essai
 FROM tmp_cnc ;
 
+COMMIT ;
