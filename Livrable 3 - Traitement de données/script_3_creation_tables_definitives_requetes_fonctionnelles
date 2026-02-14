@@ -179,6 +179,7 @@ create table programmation_cinema
 (
 	id_cinema INTEGER, 
 	nom_cinema VARCHAR, 
+	adresse_cinema VARCHAR,
 	seances_annuelles INTEGER,
 	art_et_essai BOOL,
 	nb_films_inedits INTEGER,
@@ -194,9 +195,10 @@ create table programmation_cinema
 
 --remplissage de la table programmation_cinema
 INSERT INTO programmation_cinema
-(nom_cinema, seances_annuelles, art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
+(nom_cinema, adresse_cinema, seances_annuelles, art_et_essai, nb_films_inedits, nb_films_programmes, pdm_fr, pdm_us, pdm_ue, pdm_autres_films, pdm_art_et_essai)
 SELECT DISTINCT 
 	nom_cinema,
+	adresse as adresse_cinema,
 	seances_annuelles,
 	art_et_essai, 
 	nb_films_inedits,
@@ -207,5 +209,4 @@ SELECT DISTINCT
 	pdm_autres_films AS pdm_autres_films,
 	pdm_films_ae AS pdm_art_et_essai
 FROM tmp_cnc ;
-
 
