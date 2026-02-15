@@ -3,8 +3,12 @@ BEGIN ;
 
 SET search_path TO psch;
 
+--supprime la tables si elle existe déjà, pour nos tests
+
+DROP TABLE IF EXISTS tmp_rsa_cnc;
+
 -- Création d'une table jointe pour réunir les données des différents CSV. Cette table servira a créer les tables définitives 
-CREATE TABLE TMP_rsa_CNC 
+CREATE TABLE tmp_rsa_cnc 
 (
 	region_cnc INTEGER NOT NULL,
 	nom_region VARCHAR NOT NULL, 
@@ -35,7 +39,7 @@ CREATE TABLE TMP_rsa_CNC
 	nbr_pers_rsa INTEGER
 );
 
-INSERT INTO TMP_rsa_CNC 
+INSERT INTO tmp_rsa_cnc 
 (region_cnc, nom_region, nom_cinema, adresse, code_insee, commune, departement, n_uu, ecrans, fauteuils, seances, entree_24, entree_23, 
 evolution_entrees, art_et_essai, nb_films_programmes, nb_films_inedits, pdm_films_francais, pdm_films_americains, pdm_films_europeens, pdm_autres_films, pdm_films_ae,
 latitude, longitude, type_rsa, nbr_foyer_rsa, nbr_pers_rsa)
@@ -69,9 +73,9 @@ SELECT DISTINCT
 	c.type_rsa, 
 	c.nbr_foyer_rsa,
 	c.nbr_pers_rsa 
-FROM TMP_CNC a
-LEFT JOIN TMP_etab_cine b on a.region_cnc = b.region_cnc
-LEFT JOIN TMP_rsa c on a.commune = c.commune ; 
+FROM tmp_cnc a
+LEFT JOIN tmp_etab_cine b on a.region_cnc = b.region_cnc
+LEFT JOIN tmp_rsa c on a.commune = c.commune ; 
 
 --(Doute sur LEFT JOIN : vérifier si c'est bien la bonne jointure)
 -- Fin du script
