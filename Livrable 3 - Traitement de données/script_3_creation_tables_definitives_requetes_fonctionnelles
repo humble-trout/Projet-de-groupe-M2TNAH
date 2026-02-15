@@ -51,7 +51,7 @@ SELECT DISTINCT
 	titre,
 	genre,
 	realisateur
-FROM tmp_programation tp ;
+FROM tmp_programmation tp ;
 
 --importer les id_film depuis tmp_titre
 UPDATE film f
@@ -203,7 +203,7 @@ SELECT DISTINCT
 	sous_titres AS ST,
 	version_audio AS version,
 	nbr_place AS nb_places
-FROM tmp_programation ;
+FROM tmp_programmation ;
 
 -- Creation table fréquentation 
 
