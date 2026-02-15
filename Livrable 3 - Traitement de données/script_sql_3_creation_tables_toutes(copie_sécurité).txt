@@ -24,7 +24,7 @@ SELECT DISTINCT
 	realisateur,
 	annee_sortie AS date_sortie,
 	note 
-FROM TMP_wiki1 
+FROM tmp_wiki1 
 
 UNION
 
@@ -37,7 +37,7 @@ SELECT DISTINCT
 	realisateur,
 	annee_sortie AS date_sortie,
 	note 
-FROM TMP_wiki2; 
+FROM tmp_wiki2; 
 
 create table aire_geographique
 --notes:  je préfère supprimer les accents des noms des tables. table jointe
@@ -65,7 +65,7 @@ SELECT DISTINCT
 	region_cnc AS region, 
 	departement AS nom_departement, 
 	code_insee AS code_departement
-FROM TMP_rsa_CNC; 
+FROM tmp_rsa_CNC; 
 
 create table utilisateur
 (
@@ -103,7 +103,7 @@ SELECT DISTINCT
 	ecrans,
 	fauteuils,
 	capacite_totale
-FROM TMP_rsa_CNC ; 
+FROM tmp_etab_cine ; 
 
 create table seance
 --notes: table jointe (?)
@@ -128,7 +128,7 @@ SELECT DISTINCT
 	sous_titres AS ST, 
 	version_audio AS version, 
 	nbr_place AS nb_places
-FROM TMP_programmation ; 
+FROM tmp_programmation ; 
 
 create table frequentation
 --notes: FOREIGN KEY ne fonctionne pas tant que cinema n'est pas créé mais cinema a besoin de frequentation pour être créé: problème. table jointe
@@ -151,7 +151,7 @@ SELECT DISTINCT
 	entree_22 AS entrees_2022, 
 	entree_23 AS entrees_2023,
 	entree_24 AS entrees_2024 
-FROM TMP_rsa_CNC ; 
+FROM tmp_rsa_CNC ; 
 
 create table programmation_cinema
 --notes: table non jointe
@@ -182,7 +182,7 @@ SELECT DISTINCT
 	pdm_films_europeens AS pdm_ue,
 	pdm_autres_films AS pdm_autres_films,
 	pdm_films_ae AS pdm_art_et_essai
-FROM TMP_rsa_CNC ;
+FROM tmp_programmation ;
 
 
 -- Fin du script
