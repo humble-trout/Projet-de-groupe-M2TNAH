@@ -5,7 +5,7 @@ SET search_path TO psch;
 
 --Création de la table film
 
-CREATE TABLE film (
+CREATE table if not exists film (
     id_film INTEGER,
     titre VARCHAR NOT NULL,
     genre VARCHAR,
@@ -81,7 +81,7 @@ SET id_film = DEFAULT
 WHERE id_film = 0;
 
 --creation de la table film_titre
-CREATE TABLE film_titre AS
+CREATE TABLE if not exists film_titre AS
 SELECT DISTINCT 
     id_film, 
     titre
@@ -100,7 +100,7 @@ REFERENCES film_titre(id_film);
 
 --Création de la table aire_geographique 
 
-create table aire_geographique
+create table if not exists aire_geographique
 (
 	id_aire_geographique INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	commune VARCHAR NOT NULL,
@@ -131,13 +131,17 @@ left join tmp_rsa b on a.commune = b.commune;
 
 --Création de la table utilisateur
 
-create table utilisateur
+create table if not exists utilisateur
 (
-	id_utilisateur INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY
+	id_utilisateur INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY key,
+	nom_utilisateur varchar,
+	nom varchar,
+	prénom varchar,
+	date_naissance date
 );
 
 --Création de la table cinema 
-create table cinema
+create table if not exists cinema
 (
 	id_cinema INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_aire_geographique INTEGER,
@@ -169,7 +173,7 @@ FROM tmp_cnc ;
 
 --Création de la table séance
 
-create table seance
+create table if not exists seance
 (
 	id_seance INTEGER NOT NULL GENERATED ALWAYS AS IDENTITY PRIMARY KEY,
 	id_film INTEGER,
@@ -199,7 +203,7 @@ FROM TMP_programation ;
 
 -- Creation table fréquentation 
 
-create table frequentation
+create table if not exists frequentation
 --notes: FOREIGN KEY ne fonctionne pas tant que cinema n'est pas créé mais cinema a besoin de frequentation pour être créé: problème. table jointe
 (
 	id_cinema INTEGER,
@@ -229,8 +233,7 @@ full join tmp_etab_cine tec
 on tc.adresse = tec.adresse;
 
 --Création de la table programmation_cinema
-create table programmation_cinema
-
+create table if not exists programmation_cinema
 (
 	id_cinema INTEGER, 
 	nom_cinema VARCHAR, 
