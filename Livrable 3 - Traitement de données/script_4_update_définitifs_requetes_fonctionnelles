@@ -16,7 +16,7 @@ WHERE c.commune = ag.commune ;
 
 UPDATE seance a
 SET id_film = n.id_film 
-FROM film1 n
+FROM film n
 WHERE a.titre ilike n.titre  ;
 
 UPDATE seance a
