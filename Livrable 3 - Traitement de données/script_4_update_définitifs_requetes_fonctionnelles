@@ -1,5 +1,7 @@
 BEGIN;
 
+SET search_path TO psch;
+
 --UPDATE dans la table cinema pour y inclure un id_aire_geographique
 
 UPDATE cinema c
