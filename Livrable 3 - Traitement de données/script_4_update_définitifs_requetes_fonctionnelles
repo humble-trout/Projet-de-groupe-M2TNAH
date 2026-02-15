@@ -24,7 +24,7 @@ SET id_film = z.id_film
 FROM film z
 WHERE a.titre ilike z.titre  ;
 
---update pour la clé id_cinema - fonctione !!
+--update pour la clé id_cinema
 UPDATE seance a
 SET id_cinema = g.id_cinema 
 FROM cinema g
