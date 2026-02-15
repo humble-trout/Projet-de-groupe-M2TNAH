@@ -80,9 +80,22 @@ UPDATE film
 SET id_film = DEFAULT 
 WHERE id_film = 0;
 
--- transforme id_film en clé primaire de la table film
-ALTER TABLE film 
+--creation de la table film_titre
+CREATE TABLE film_titre AS
+SELECT DISTINCT 
+    id_film, 
+    titre
+FROM film;
+
+-- transforme id_film en clé primaire de la table film_titre
+ALTER TABLE film_titre
 ADD PRIMARY KEY (id_film);
+
+--transformation de id_film dans film en une clé étrangère de film_titre
+ALTER TABLE film
+ADD CONSTRAINT fk_film_id_titre
+FOREIGN KEY (id_film) 
+REFERENCES film_titre(id_film);
 
 
 --Création de la table aire_geographique 
@@ -168,7 +181,7 @@ create table seance
 	ST BOOLEAN,
 	version VARCHAR,
 	nb_places INTEGER,
-	FOREIGN KEY (id_film) REFERENCES film(id_film),
+	FOREIGN KEY (id_film) REFERENCES film_titre(id_film),
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
 --Remplissage de la table seance
