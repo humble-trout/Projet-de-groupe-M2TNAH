@@ -199,7 +199,7 @@ SELECT DISTINCT
 	sous_titres AS ST,
 	version_audio AS version,
 	nbr_place AS nb_places
-FROM TMP_programation ;
+FROM tmp_programation ;
 
 -- Creation table fréquentation 
 
