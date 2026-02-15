@@ -1,7 +1,7 @@
 BEGIN;
 
 -- nom de schéma définitif
-SET search_path TO test_psch;
+SET search_path TO psch;
 
 --supprime les tables si elles existent déjà, pour nos tests
 
