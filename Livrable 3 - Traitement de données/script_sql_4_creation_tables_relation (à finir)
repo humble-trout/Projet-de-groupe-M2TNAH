@@ -1,3 +1,8 @@
+BEGIN;
+
+-- nom de schéma définitif
+SET search_path TO psch;
+
 
 create table calendrier
 (
@@ -30,3 +35,7 @@ create table cinema_favori
 	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
+
+-- Fin du script
+
+COMMIT ;
