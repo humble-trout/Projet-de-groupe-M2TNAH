@@ -3,6 +3,10 @@ BEGIN;
 -- nom de schéma définitif
 SET search_path TO psch;
 
+--supprime les tables si elles existent déjà, pour nos tests
+DROP TABLE IF EXISTS programmation, frequentation, seance, cinema, utilisateur, aire_geographique, film_titre, film;
+
+
 --Création de la table film
 
 CREATE table if not exists film (
