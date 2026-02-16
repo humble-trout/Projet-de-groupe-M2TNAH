@@ -3,6 +3,9 @@ BEGIN;
 -- nom de schéma définitif
 SET search_path TO psch;
 
+--supprime les tables si elles existent déjà, pour nos tests
+DROP TABLE IF EXISTS calendrier, cinema_favori;
+
 
 create table calendrier
 (
@@ -12,21 +15,12 @@ create table calendrier
 	FOREIGN KEY (id_seance) REFERENCES seance(id_seance)
 );
 
+--impossible
 INSERT INTO calendrier
 (id_utilisateur, id_seance)
 SELECT a.id_utilisateur, c.
 FROM 
 INNER JOIN    ON 
-
-
---Remplissage de la table "cinema_favori"
-
-INSERT INTO cinema_favori
-(id_utilisateur, id_cinema)
-SELECT 
-FROM 
-INNER JOIN 
-
 
 create table cinema_favori
 (
@@ -35,6 +29,16 @@ create table cinema_favori
 	FOREIGN KEY (id_utilisateur) REFERENCES utilisateur(id_utilisateur),
 	FOREIGN KEY (id_cinema) REFERENCES cinema(id_cinema)
 );
+
+
+--Remplissage de la table "cinema_favori"
+--impossible
+INSERT INTO cinema_favori
+(id_utilisateur, id_cinema)
+SELECT 
+FROM 
+INNER JOIN 
+
 
 -- Fin du script
 
