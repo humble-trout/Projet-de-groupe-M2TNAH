@@ -4,12 +4,41 @@ Mettez vos notes dans les différentes parties du plan :
 I) Jeux de données choisis et objectifs du traitement
 
 II) Description et explication des traitements réalisés (mettez ici vos requêtes SQL/SPARQL) :
+  eva : moi j'ai réflechis et appliqué le meme traitement aux données dont on compte se servir pour le croisement pour faciliter les choses
+
+Comme les sources n'ont pas toujours d'identifiant commun, créer une clé unique (ex: concaténation du titre normalisé et de l'année) pour lier la programmation aux infos Wikidata.
+faire le meme traitement espace accents mots vide sur toutes les colonnes qui parlent de la même chose (cinéma)
+
+pour les cinéma le lieu on a nom + num de departement (recup les 2 premiers chiffre du cp)
+sinon on a commune coté cnc et cineville cote progra
+	faut tej les accents et se limité sur les dep pcq les adresses sont pas fixe mais j'ai l'impr que le nom oui
+	les adresse c'est dead il faut garder que celle du cnc pcq au moins elles viennent du meme endroit et sont link au longitudes latitudes
+	on peut enlever les determinant pcq c'est pas stable
+
+
+si <10000 prendre que le 1er
+filmduration c'est cata
+on ne traite que ce qu'on va renta : si c'est inutile c'est futile
+genre on prendra ceux de wikidata c'est tout pas besoin de traiter dans le nettoyages de prog
+vo vf version_original version_local version_original_local : prendre décision d'écarter les incertitude entre VO et VF
+
 
 A) Chaîne de traitement sous la forme d'un diagramme de processus
 
 III) Analyse des dataviz 
 
-répondre aux questions suivantes : 
+répondre aux questions suivantes par dataviz : 
+
+radar 1 :
+i. Quelle est la valeur ajoutée des datavisualisations pour comprendre les
+données présentées ? 
+  ca donne des info sur la repartition des type de film (en fonction de l'origine d'une part, de la langue de projection,
+et du type de pprogrammation) des cinéma en mettant en valeur la difference de type de programmation entrre paris et le reste de al france
+ii. Qu’apprend-on en les regardant ?
+  que les programmation change en fonction de du type de cinéma et la région, socialement parlant 
+iii. Quels sont les biais ?
+  on a placé les données en pourcentage de maniere a ce que les chiffre soit comparable par zone peut importe le nombre de seance
+  cela dit 
 
 i. Quelle est la valeur ajoutée des datavisualisations pour comprendre les
 données présentées ?
